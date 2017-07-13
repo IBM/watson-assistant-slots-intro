@@ -1,0 +1,15 @@
+---
+declared-services:
+  my-conversation-service:
+    label: conversation
+    plan: free
+applications:
+- name: watson-conversation-slots-intro
+  command: npm start
+  path: .
+  memory: 256M
+  instances: 1
+  services:
+  - wcsi-conversation-service
+  env:
+    NPM_CONFIG_PRODUCTION: false
