@@ -27,13 +27,13 @@ casper.test.begin('Conversation Slots intro', 5, function suite(test) {
 
   function testEnterMessageClick() {
     casper.then(function () {
-      this.sendKeys('#textInput', 'I want a large pepperoni pizza');
+      this.sendKeys('#textInput', 'I want a large vegetarian pizza');
       this.sendKeys('#textInput', casper.page.event.key.Enter);
     });
     casper.waitForSelector('.from-user', function () {
       test.assertExists('.message-inner', 'Message sent');
-      test.assertTextExists('I want a large pepperoni pizza', 'Message in bubble');
-      casper.waitForText('Thank you for ordering ');
+      test.assertTextExists('I want a large vegetarian pizza', 'Message in bubble');
+      casper.waitForText('Any extra toppings?');
     });
   }
 
