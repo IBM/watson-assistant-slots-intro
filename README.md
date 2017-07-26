@@ -1,6 +1,6 @@
 ## Work In Progress. Stay tuned for forthcoming complete code.
 
-# Creating a Retail Chatbot using Watson Conversation, Discovery and Database Services
+# Creating a Pizza ordering Chatbot using Watson Conversation Slots feature
 
 
 In this developer journey, we will use the Watson Conversation Slots feature to
@@ -14,7 +14,7 @@ When the reader has completed this journey, they will understand how to:
 * Use the power of Conversation Slots to more efficiently populate data fields
 * Use Conversation Slots to handle various inputs within one Node.
 
-![Flow](doc/source/images/architecture.png)
+![Flow](doc/source/images/slotsFlow.png)
 
 ### With Watson
 
@@ -33,12 +33,12 @@ Coming Soon!
 
 # Steps
 
-**NOTE:** Perform steps 1-5 **OR** click the ``Deploy to Bluemix`` button and hit ``Create`` and then jump to step 6.
+**NOTE:** Perform steps 1-5 **OR** click the ``Deploy to Bluemix`` button and hit ``Create`` and then jump to step 5.
 
 
 1. [Clone the repo](#1-clone-the-repo)
 2. [Create Bluemix services](#2-create-bluemix-services)
-3. [Get Bluemix credentials and add to .env](#3-get-creds-add-to-.env)
+3. [Get Bluemix credentials and add to .env](#3-get-bluemix-services-credentials-and-add-to-env-file)
 4. [Configure Watson Conversation](#4-configure-watson-conversation)
 5. [Run the application](#5-run-the-application)
 
@@ -94,7 +94,7 @@ workspace and select **View details**.
 </p>
 
  Put this Workspace ID into the .env file
-as WORKSPACE_ID.
+as ``WORKSPACE_ID``.
 
 ## 5. Run the application
 
@@ -120,9 +120,9 @@ The power of Slots is in how it reduces the numbe of nodes requiered to implemen
 
 ![](doc/source/images/pizzaDialogBegin.png)
 
-Each slot represents a field to be populated in the chatbot: pizza_size, pizza_type, and pizza_topings.
+Each slot represents a field to be populated in the chatbot: ``pizza_size, pizza_type, and pizza_topings``.
 If they are not present, the user will be prompted, starting at the top, until all are populated via
-the associated variable ($pizza_size, $pizza_type, etc).
+the associated variable (``$pizza_size, $pizza_type, etc``).
 
 Click on the Configure ![icon](doc/source/images/pizzaGearIcon.png) to add more funtionality:
 
