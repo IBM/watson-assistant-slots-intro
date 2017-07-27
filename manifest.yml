@@ -1,6 +1,6 @@
 ---
 declared-services:
-  my-conversation-service:
+  wcsi-conversation-service:
     label: conversation
     plan: free
 applications:
@@ -12,4 +12,5 @@ applications:
   services:
   - wcsi-conversation-service
   env:
+    WORKSPACE_ID: placeholder
     NPM_CONFIG_PRODUCTION: false

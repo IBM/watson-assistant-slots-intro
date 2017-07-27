@@ -36,6 +36,9 @@ Coming Soon!
 **NOTE:** Perform steps 1-5 **OR** click the ``Deploy to Bluemix`` button and hit ``Create`` and then jump to step 5.
 
 
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/scottdangelo/watson-conversation-slots-intro #required)
+
+
 1. [Clone the repo](#1-clone-the-repo)
 2. [Create Bluemix services](#2-create-bluemix-services)
 3. [Get Bluemix credentials and add to .env](#3-get-bluemix-services-credentials-and-add-to-env-file)
