@@ -97,7 +97,13 @@ If you used ``Deploy to Bluemix``, the setup is automatic.
 
 ### If you decided to run the app locally...
 
-Run this command: ``$ npm start``
+Install the dependencies:
+
+``$ npm install``
+
+Run this command:
+
+ ``$ npm start``
 
 # Conversation Slots Discussion
 
