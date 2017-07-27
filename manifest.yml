@@ -1,6 +1,6 @@
 ---
 declared-services:
-  my-conversation-service:
+  wcsi-conversation-service:
     label: conversation
     plan: free
 applications:
