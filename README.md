@@ -1,7 +1,4 @@
-## Work In Progress. Stay tuned for forthcoming complete code.
-
 # Creating a Pizza ordering Chatbot using Watson Conversation Slots feature
-
 
 In this developer journey, we will use the Watson Conversation Slots feature to
 build a chatbot that takes a pizza order. The needed information such as size, type,
@@ -62,12 +59,9 @@ Create the following service:
 As you create the Blumix Services, you'll need to create service credentials and get the
 username and password:
 
+![](doc/source/images/WatsonCred1.png)
 
-<p align="center">
-  <img width="500" height="350" src="doc/source/images/WatsonCred1.png">
-</p>
-
-Move the watson-conversation-slots-intro/env.sample file to /.env and populate the service
+Move the watson-conversation-slots-intro/env.sample file to ``/.env`` and populate the service
 credentials as you create the credentials:
 
 ```
@@ -82,47 +76,40 @@ WORKSPACE_ID=<add_conversation_workspace>
 Launch the **Watson Conversation** tool. Use the **import** icon button on the right
 
 <p align="center">
-  <img width="400" height="55" src="doc/source/images/import_conversation_workspace.png">
+  <img width="50%" height="50%" src="doc/source/images/import_conversation_workspace.png">
 </p>
+
+![](doc/source/images/import_conversation_workspace.png)
 
 Find the local version of [`data/pizza-advanced.json`](data/pizza-advanced.json) and select
 **Import**. Find the **Workspace ID** by clicking on the context menu of the new
 workspace and select **View details**.
 
 <p align="center">
-  <img width="400" height="250" src="doc/source/images/open_conversation_menu.png">
+  <img src="doc/source/images/open_conversation_menu.png">
 </p>
 
- Put this Workspace ID into the .env file
-as ``WORKSPACE_ID``.
+Put this Workspace ID into the .env file as ``WORKSPACE_ID``.
 
 ## 5. Run the application
 
 ### If you used the Deploy to Bluemix button...
 
-If you used ``Deploy to Bluemix``, most of the setup is automatic, but not
-quite all of it. We have to update a few environment variables.
-
-In the Bluemix dashboard find the App that was created. Click on ``Runtime`` on the menu and navigate to the ``Environment variables`` tab.
-
-![](doc/source/images/env_vars.png)
+If you used ``Deploy to Bluemix``, the setup is automatic.
 
 ### If you decided to run the app locally...
 
-```
-$ npm start
-```
+Run this command: ``$ npm start``
 
 # Conversation Slots Discussion
 
 The power of Slots is in how it reduces the numbe of nodes requiered to implement logic in your Watson Conversation Dialog. Open up the Dialog, and we'll have a look:
 
-
 ![](doc/source/images/pizzaDialogBegin.png)
 
-Each slot represents a field to be populated in the chatbot: ``pizza_size, pizza_type, and pizza_topings``.
+Each slot represents a field to be populated in the chatbot: ``pizza_size``, ``pizza_type``, and ``pizza_topings``.
 If they are not present, the user will be prompted, starting at the top, until all are populated via
-the associated variable (``$pizza_size, $pizza_type, etc``).
+the associated variable (``$pizza_size``, ``$pizza_type``, etc).
 
 Click on the Configure ![icon](doc/source/images/pizzaGearIcon.png) to add more funtionality:
 
