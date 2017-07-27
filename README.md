@@ -79,8 +79,6 @@ Launch the **Watson Conversation** tool. Use the **import** icon button on the r
   <img width="50%" height="50%" src="doc/source/images/import_conversation_workspace.png">
 </p>
 
-![](doc/source/images/import_conversation_workspace.png)
-
 Find the local version of [`data/pizza-advanced.json`](data/pizza-advanced.json) and select
 **Import**. Find the **Workspace ID** by clicking on the context menu of the new
 workspace and select **View details**.
