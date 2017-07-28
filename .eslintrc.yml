@@ -12,14 +12,14 @@ parserOptions:
   sourceType: module
 plugins:
 rules:
+  no-console:
+    - off
   linebreak-style:
-    - warn
+    - error
     - unix
   quotes:
-    - warn
+    - error
     - single
   semi:
-    - warn
+    - error
     - always
-  no-console:
-    - warn
