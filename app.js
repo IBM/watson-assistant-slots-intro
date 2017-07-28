@@ -16,16 +16,15 @@
 
 'use strict';
 
-const WatsonConversationSetup = require('./lib/watson-conversation-setup');
-const DEFAULT_NAME = 'watson-conversation-slots-intro';
-const fs = require('fs'); // file system for loading JSON
-const vcapServices = require('vcap_services');
-const conversationCredentials = vcapServices.getCredentials('conversation');
-const watson = require('watson-developer-cloud'); // watson sdk
+var WatsonConversationSetup = require('./lib/watson-conversation-setup');
+var DEFAULT_NAME = 'watson-conversation-slots-intro';
+var fs = require('fs'); // file system for loading JSON
+var vcapServices = require('vcap_services');
+var conversationCredentials = vcapServices.getCredentials('conversation');
+var watson = require('watson-developer-cloud'); // watson sdk
 
 var express = require('express'); // app server
 var bodyParser = require('body-parser'); // parser for post requests
-var Conversation = require('watson-developer-cloud/conversation/v1'); // watson sdk
 
 var app = express();
 
@@ -35,10 +34,10 @@ require('cf-deployment-tracker-client').track();
 app.use(express.static('./public')); // load UI from public folder
 app.use(bodyParser.json());
 
-let workspaceID; // workspaceID will be set when the workspace is created or validated.
+var workspaceID; // workspaceID will be set when the workspace is created or validated.
 
 // Create the service wrapper
-const conversation = watson.conversation({
+var conversation = watson.conversation({
   url: 'https://gateway.watsonplatform.net/conversation/api',
   username: conversationCredentials.username,
   password: conversationCredentials.password,
@@ -46,12 +45,12 @@ const conversation = watson.conversation({
   version: 'v1'
 });
 
-const conversationSetup = new WatsonConversationSetup(conversation);
-const workspaceJson = JSON.parse(fs.readFileSync('data/watson-pizzeria.json'));
-const conversationSetupParams = { default_name: DEFAULT_NAME, workspace_json: workspaceJson };
+var conversationSetup = new WatsonConversationSetup(conversation);
+var workspaceJson = JSON.parse(fs.readFileSync('data/watson-pizzeria.json'));
+var conversationSetupParams = { default_name: DEFAULT_NAME, workspace_json: workspaceJson };
 conversationSetup.setupConversationWorkspace(conversationSetupParams, (err, data) => {
   if (err) {
-    handleSetupError(err);
+    //handleSetupError(err);
   } else {
     console.log('Conversation is ready!');
     workspaceID = data;
