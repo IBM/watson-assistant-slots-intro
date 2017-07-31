@@ -109,7 +109,15 @@ $ npm start
 
 # Conversation Slots Discussion
 
-The power of Slots is in how it reduces the numbe of nodes requiered to implement logic in your Watson Conversation Dialog. Open up the Dialog, and we'll have a look:
+The power of Slots is in how it reduces the number of nodes required to implement logic in your Watson Conversation Dialog. Here's a partial conversation Dialog using the old method:
+
+![](doc/source/images/pizzaOldWay.png)
+
+And here's a more complete Dialog using slots, which puts all the logic in one Node!
+
+![](doc/source/images/pizzaNewWay.png)
+
+Open up the Dialog, and we'll have a look:
 
 ![](doc/source/images/pizzaDialogBegin.png)
 
