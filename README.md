@@ -66,7 +66,7 @@ username and password:
 
 ![](doc/source/images/WatsonCred1.png)
 
-Move the watson-conversation-slots-intro/env.sample file to ``/.env`` and populate the service
+Move the watson-conversation-slots-intro/env.example file to ``/.env`` and populate the service
 credentials as you create the credentials:
 
 ```
