@@ -29,7 +29,7 @@ Want to take your Watson app to the next level? Looking to leverage Watson Brand
 
 # Watch the Video
 
-[Watson Conversation Slots Intro](https://youtu.be/6QlAnqSiWvo)
+[![](http://img.youtube.com/vi/6QlAnqSiWvo/0.jpg)](https://youtu.be/6QlAnqSiWvo)
 
 # Steps
 
