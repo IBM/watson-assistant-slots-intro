@@ -55,7 +55,7 @@ the Conversation Intents, Entities, and Dialog Nodes.
 
 ## 2. Create Bluemix services
 
-Create the following service:
+Create the following service and name it `wcsi-conversation-service`:
 
   * [**Watson Conversation**](https://console.ng.bluemix.net/catalog/services/conversation)
 
@@ -206,6 +206,22 @@ Type reset to start again and test this by adding the phrase "to eat there...":
 
 
 # Troubleshooting
+
+* Deploy using Cloud Foundry 'cf push' gives:
+
+``FAILED
+Could not find service <Watson_service> to bind to <Bluemix_application>``
+
+If you name your service wcsi-conversation-service, this should work.
+When you use `cf push`, it is trying to bind to the services listed in the manifest.yml.
+
+So, there are 2 ways you can get this to work:
+
+* Change the names of your Bluemix services to match the names in the manifest.
+* Change the names in the manifest to match the names of your Bluemix services.
+
+>NOTE: The 'Deploy to Bluemix' button solves this issue by creating the services on the fly (with the correct names).
+
 
 # License
 
