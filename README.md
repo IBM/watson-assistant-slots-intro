@@ -33,7 +33,7 @@ Want to take your Watson app to the next level? Looking to leverage Watson Brand
 
 # Steps
 
-**NOTE:** Perform steps 1-5 **OR** click the ``Deploy to Bluemix`` button and hit ``Create`` and then jump to step 5.
+**NOTE:** Perform steps 1-5 **OR** click the ``Deploy to Bluemix`` button and hit ``Create`` and then jump to step 5. To run in a container on Bluemix, use [these instructions](doc/source/Container.md).
 
 
 [![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/8cbdd782337103af2cd09faf13a2481b/button.svg)](https://bluemix.net/deploy?repository=https://github.com/IBM/watson-conversation-slots-intro)
