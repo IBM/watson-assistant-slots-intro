@@ -28,7 +28,7 @@ var bodyParser = require('body-parser'); // parser for post requests
 
 var app = express();
 
-require('cf-deployment-tracker-client').track();
+require("metrics-collector-client").track();
 
 // Bootstrap application settings
 app.use(express.static('./public')); // load UI from public folder
