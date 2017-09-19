@@ -1,4 +1,3 @@
-deploy_to_bluemix: True
 id: watson-conversation-slots-intro
 event_id: web
 event_organizer: dev-journeys
