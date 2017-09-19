@@ -1,0 +1,7 @@
+id: watson-conversation-slots-intro
+event_id: web
+event_organizer: dev-journeys
+runtimes: 
+  - Cloud Foundry
+services: 
+  - Conversation
