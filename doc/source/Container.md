@@ -103,7 +103,7 @@ $ bx cs workers $CLUSTER_NAME
 
 * Identify the external port your pod is listening on: 
 
-> Note: The Dockerfile determines the port that the container listens on using the `EXPOSE <port>` command. Kubernetes maps this a publicly addressable port:
+> Note: The Dockerfile determines the port that the container listens on using the `EXPOSE <port>` command. Kubernetes maps this to a publicly addressable port:
 
 ```
 $ kubectl get services $KUBE_SERVICE
