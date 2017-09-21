@@ -1,0 +1,48 @@
+---
+# Service to expose frontend
+apiVersion: v1
+kind: Service
+metadata:
+  name: pizza-bot
+  labels:
+    app: pizza-bot
+    tier: frontend
+spec:
+  type: NodePort
+  ports:
+  - port: 3000
+  selector:
+    app: pizza-bot
+    tier: frontend
+---
+# Application to deploy
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: pizza-bot
+spec:
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: pizza-bot
+        tier: frontend
+    spec:
+      containers:
+      - name: pizza-bot
+        image: scottdangelo/conversation-slots-intro:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+          - name: WORKSPACE_ID
+            valueFrom:
+              configMapKeyRef:
+                name: watson-pizzeria
+                key: workspace_id
+          - name: CONVERSATION_SERVICE_WATSON_PIZZERIA
+            valueFrom:
+              secretKeyRef:
+                name: binding-conversation-service-watson-pizzeria
+                key: binding
