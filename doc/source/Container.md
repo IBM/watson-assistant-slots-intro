@@ -12,7 +12,6 @@ $ export KUBE_SERVICE=pizza-bot
 $ export CONTAINER_ENV_VARIABLE=CONVERSATION_SERVICE_WATSON_PIZZERIA
 ```
 
-
 # Steps
 
 ## Create the Kubernetes cluster
@@ -32,7 +31,6 @@ Either follow the instructions to [Create a Conversation Service](https://consol
 ```
 $ bx service create conversation free $CONVERSATION_SERVICE
 ```
-
 
 * Verify that the service instance is created:
 
@@ -71,7 +69,7 @@ workspace and select **View details**:
 export the workspace_id:
 
 ```
-export <workspace_id>=WORKSPACE_ID
+$ export workspace_id=<WORKSPACE_ID>
 ```
 
 ## Create a Kubernetes Configuration Map with the Workspace ID
@@ -105,7 +103,7 @@ $ bx cs workers $CLUSTER_NAME
 
 * Identify the external port your pod is listening on: 
 
->> Note: The Dockerfile determines the port that the container listens on using the `EXPOSE <port>` command. Kubernetes maps this a publicly addressable port:
+> Note: The Dockerfile determines the port that the container listens on using the `EXPOSE <port>` command. Kubernetes maps this to a publicly addressable port:
 
 ```
 $ kubectl get services $KUBE_SERVICE
@@ -145,8 +143,8 @@ The secret is mapped into the container as an environment variable through the K
 * Example usage is to have a script that is run when the container is started. We can then parse them from the  environment variable `$CONTAINER_ENV_VARIABLE` using jq:
 
 ```bash
-export CONVERSATION_USERNAME=$(echo "${CONVERSATION_ENV_VARIABLE}" |
-                                jq -r '.username')
+$ export CONVERSATION_USERNAME=$(echo "${CONVERSATION_ENV_VARIABLE}" |
+                                  jq -r '.username')
 ```
 
 You can see the defined secrets in the Kubernetes dashboard by running ``kubctl proxy`` and accessing [http://127.0.0.1:8001/ui](http://127.0.0.1:8001/ui).
@@ -156,8 +154,8 @@ You can see the defined secrets in the Kubernetes dashboard by running ``kubctl 
 If a pod doesn't start examine the logs:
 
 ```bash
-kubectl get pods
-kubectl logs <pod name>
+$ kubectl get pods
+$ kubectl logs <pod name>
 ```
 
 ### Cleanup
@@ -165,7 +163,7 @@ kubectl logs <pod name>
 To delete all your services and deployments, run:
 
 ```bash
-kubectl delete deployment <deployment_name>
-kubectl delete service $KUBE_SERVICE
+$ kubectl delete deployment <deployment_name>
+$ kubectl delete service $KUBE_SERVICE
 ```
 
