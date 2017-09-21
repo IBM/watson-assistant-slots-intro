@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/IBM/watson-conversation-slots-intro.svg?branch=master)](https://travis-ci.org/IBM/watson-conversation-slots-intro)
-![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/8cbdd782337103af2cd09faf13a2481b/badge.svg)
+![Bluemix Deployments](https://metrics-tracker.mybluemix.net/stats/8cbdd782337103af2cd09faf13a2481b/badge.svg)
 
 # Creating a Pizza ordering Chatbot using Watson Conversation Slots feature
 
@@ -33,7 +33,7 @@ Want to take your Watson app to the next level? Looking to leverage Watson Brand
 
 # Steps
 
-[![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/8cbdd782337103af2cd09faf13a2481b/button.svg)](https://bluemix.net/deploy?repository=https://github.com/IBM/watson-conversation-slots-intro)
+[![Deploy to Bluemix](https://metrics-tracker.mybluemix.net/stats/8cbdd782337103af2cd09faf13a2481b/button.svg)](https://bluemix.net/deploy?repository=https://github.com/IBM/watson-conversation-slots-intro)
 
 Click the ``Deploy to Bluemix`` button and hit ``Create`` and then jump to step 5
 
@@ -44,8 +44,6 @@ Run in a container on Bluemix, using [these instructions](doc/source/Container.m
  **OR** 
 
  Perform steps 1-5:
-
-
 
 1. [Clone the repo](#1-clone-the-repo)
 2. [Create Bluemix services](#2-create-bluemix-services)
