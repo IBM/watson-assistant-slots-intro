@@ -47,7 +47,7 @@ $ bx cs clusters
 * Bind the service instance to your cluster:
 
 ```
-$ bx cs cluster-service-bind <cluster-ID> $CONVERSATION_SERVICE
+$ bx cs cluster-service-bind <cluster-ID> default $CONVERSATION_SERVICE
 ```
 
 ## Load the Watson Conversation
