@@ -22,6 +22,18 @@ $ export CONTAINER_ENV_VARIABLE=CONVERSATION_SERVICE_WATSON_PIZZERIA
 $ export CLUSTER_NAME=<your_cluster_name>
 ```
 
+* Set the Kubernetes environment to work with your cluster:
+
+```
+bx cs cluster-config $CLUSTER_NAME
+```
+
+The output of this command will contain a KUBECONFIG environment variable that must be exported in order to set the context. Copy and paste the output in the terminal window. An example is:
+
+```
+export KUBECONFIG=/home/rak/.bluemix/plugins/container-service/clusters/Kate/kube-config-prod-dal10-<cluster_name>.yml
+```
+
 ## Create the Watson Conversation Service and bind to your cluster
 
 Either follow the instructions to [Create a Conversation Service](https://console.ng.bluemix.net/catalog/services/conversation) or perform the following from the Bluemix CLI.
