@@ -64,7 +64,7 @@ $ bx cs cluster-service-bind <cluster-ID> default $CONVERSATION_SERVICE
 
 ## Load the Watson Conversation
 
-* Launch the **Watson Conversation** tool. Use the **import** icon button on the right:
+* Launch the [**Watson Conversation**](https://watson-conversation.ng.bluemix.net) tool. Use the **import** icon button on the right:
 
 <p align="center">
   <img width="50%" height="50%" src="images/import_conversation_workspace.png">
