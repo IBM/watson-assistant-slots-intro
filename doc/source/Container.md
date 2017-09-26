@@ -81,7 +81,7 @@ workspace and select **View details**:
 export the workspace_id:
 
 ```
-$ export workspace_id=<WORKSPACE_ID>
+$ export WORKSPACE_ID=<WORKSPACE_ID>
 ```
 
 ## Create a Kubernetes Configuration Map with the Workspace ID
