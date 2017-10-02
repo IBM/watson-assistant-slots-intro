@@ -39,7 +39,7 @@ spec:
           - name: WORKSPACE_ID
             valueFrom:
               configMapKeyRef:
-                name: watson-pizzeria
+                name: watson-pizzeria-config
                 key: workspace_id
           - name: CONVERSATION_SERVICE_WATSON_PIZZERIA
             valueFrom:
