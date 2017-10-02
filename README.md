@@ -29,7 +29,13 @@ Want to take your Watson app to the next level? Looking to leverage Watson Brand
 
 # Watch the Video
 
+#### Running this application with Cloud Foundry on Bluemix
+
 [![](http://img.youtube.com/vi/6QlAnqSiWvo/0.jpg)](https://youtu.be/6QlAnqSiWvo)
+
+#### Running this application in a container with Kubernetes on Bluemix
+
+[![](https://i.ytimg.com/vi/G-rESweRG84/0.jpg)](https://youtu.be/G-rESweRG84)
 
 # Steps
 
