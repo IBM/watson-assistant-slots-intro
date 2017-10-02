@@ -1,0 +1,38 @@
+{
+  "name": "Assemble a pizza-ordering chatbot dialog",
+  "description": "Easily create a complex dialog with Watson Conversation Slots and Node.js",
+  "thumbnailURL": "blueprint/thumbnail.svg",
+  "appIconURL": "blueprint/appicon.svg",
+  "previewURLs": [],
+  "type": "WEB",
+  "tags": [
+    "node",
+    "watson"
+  ],
+  "generators": {
+    "node": [
+      "generator-starterkit-content-downloader",
+      "generator-ibm-cloud-enablement"
+    ]
+  },
+  "generatorOptions": {
+    "generator-starterkit-content-downloader": {
+      "registry": "https://npm-registry.whitewater.ibm.com",
+      "scope": "@arf",
+      "version": "latest"
+    },
+    "generator-ibm-cloud-enablement": {
+      "version": "latest"
+    }
+  },
+  "requiredCapabilities": [
+    "conversation"
+  ],
+  "requiredCapabilitiesURLs": {
+    "conversation": "https://console.bluemix.net/catalog/services/conversation"
+  },
+  "servicePlans": {
+    "conversation": "free"
+  },
+  "email": "cloud@us.ibm.com"
+}
