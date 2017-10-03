@@ -63,7 +63,7 @@ Clone `watson-conversation-slots-intro` locally. In a terminal, run:
 
   `$ git clone https://github.com/ibm/watson-conversation-slots-intro`
 
-We’ll be using the file [`data/pizza-advanced.json`](data/pizza-advanced.json) to upload
+We’ll be using the file [`data/watson-pizzeria.json`](data/watson-pizzeria.json) to upload
 the Conversation Intents, Entities, and Dialog Nodes.
 
 ## 2. Create Bluemix services
@@ -97,7 +97,7 @@ Launch the **Watson Conversation** tool. Use the **import** icon button on the r
   <img width="50%" height="50%" src="doc/source/images/import_conversation_workspace.png">
 </p>
 
-Find the local version of [`data/pizza-advanced.json`](data/pizza-advanced.json) and select
+Find the local version of [`data/watson-pizzeria.json`](data/watson-pizzeria.json) and select
 **Import**. Find the **Workspace ID** by clicking on the context menu of the new
 workspace and select **View details**.
 
