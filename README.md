@@ -1,24 +1,26 @@
 [![Build Status](https://travis-ci.org/IBM/watson-conversation-slots-intro.svg?branch=master)](https://travis-ci.org/IBM/watson-conversation-slots-intro)
-![Bluemix Deployments](https://metrics-tracker.mybluemix.net/stats/8cbdd782337103af2cd09faf13a2481b/badge.svg)
+![IBM Cloud Deployments](https://metrics-tracker.mybluemix.net/stats/8cbdd782337103af2cd09faf13a2481b/badge.svg)
 
 # Creating a Pizza ordering Chatbot using Watson Conversation Slots feature
 
-In this developer journey, we will use the Watson Conversation Slots feature to
+In this Code Pattern, we will use the Watson Conversation Slots feature to
 build a chatbot that takes a pizza order. The needed information such as size, type,
 and ingredient choices can all be entered within one Conversation Node, unlike
 with previous versions of Conversation.
 
-When the reader has completed this journey, they will understand how to:
+When the reader has completed this Code Pattern, they will understand how to:
 
 * Create a chatbot dialog with Watson Conversation
 * Use the power of Conversation Slots to more efficiently populate data fields
 * Use Conversation Slots to handle various inputs within one Node.
 
-![Flow](doc/source/images/slotsFlow.png)
+![](doc/source/images/architecture.png)
 
-### With Watson
+## Flow
 
-Want to take your Watson app to the next level? Looking to leverage Watson Brand assets? Join the [With Watson](https://www.ibm.com/watson/with-watson) program which provides exclusive brand, marketing, and tech resources to amplify and accelerate your Watson embedded commercial solution.
+1. User sends messages to the application (running locally or on IBM Cloud).
+2. The application sends the user message to IBM Watson Conversation service, and displays the ongoing chat in a web page.
+3. Watson Conversation uses the Slots feature to fill out the required fields for a pizza order, and sends requests for additional information back to the running application. 
 
 ## Included Components
 
@@ -29,35 +31,40 @@ Want to take your Watson app to the next level? Looking to leverage Watson Brand
 
 # Watch the Video
 
-#### Running this application with Cloud Foundry on Bluemix
+#### Running this application with Cloud Foundry on IBM Cloud
 
 [![](http://img.youtube.com/vi/6QlAnqSiWvo/0.jpg)](https://youtu.be/6QlAnqSiWvo)
 
-#### Running this application in a container with Kubernetes on Bluemix
+#### Running this application in a container with Kubernetes on IBM Cloud
 
 [![](https://i.ytimg.com/vi/G-rESweRG84/0.jpg)](https://youtu.be/G-rESweRG84)
 
 # Steps
 
-[![Deploy to Bluemix](https://metrics-tracker.mybluemix.net/stats/8cbdd782337103af2cd09faf13a2481b/button.svg)](https://bluemix.net/deploy?repository=https://github.com/IBM/watson-conversation-slots-intro)
+## Deploy to IBM Cloud
 
-Click the ``Deploy to Bluemix`` button and hit ``Create`` and then jump to step 5
+[![Deploy to IBM Cloud](https://metrics-tracker.mybluemix.net/stats/8cbdd782337103af2cd09faf13a2481b/button.svg)](https://bluemix.net/deploy?repository=https://github.com/IBM/watson-conversation-slots-intro)
+
+Click the ``Deploy to IBM Cloud`` button and hit ``Create`` and then jump to step 5.
 
 **OR** 
 
-Run in a container on Bluemix, using [these instructions](doc/source/Container.md).
+## Run in container
+
+Run in a container on IBM Cloud, using [these instructions](doc/source/Container.md).
 
  **OR** 
 
+## Run locally
  Perform steps 1-5:
 
 1. [Clone the repo](#1-clone-the-repo)
-2. [Create Bluemix services](#2-create-bluemix-services)
-3. [Get Bluemix credentials and add to .env](#3-get-bluemix-services-credentials-and-add-to-env-file)
+2. [Create IBM Cloud services](#2-create-ibm-cloud-services)
+3. [Get IBM Cloud credentials and add to .env](#3-get-ibm-cloud-services-credentials-and-add-to-env-file)
 4. [Configure Watson Conversation](#4-configure-watson-conversation)
 5. [Run the application](#5-run-the-application)
 
-## 1. Clone the repo
+### 1. Clone the repo
 
 Clone `watson-conversation-slots-intro` locally. In a terminal, run:
 
@@ -66,13 +73,13 @@ Clone `watson-conversation-slots-intro` locally. In a terminal, run:
 We’ll be using the file [`data/watson-pizzeria.json`](data/watson-pizzeria.json) to upload
 the Conversation Intents, Entities, and Dialog Nodes.
 
-## 2. Create Bluemix services
+### 2. Create IBM Cloud services
 
 Create the following service and name it `wcsi-conversation-service`:
 
   * [**Watson Conversation**](https://console.ng.bluemix.net/catalog/services/conversation)
 
-## 3. Get Bluemix Services Credentials and add to .env file
+### 3. Get IBM Cloud Services Credentials and add to .env file
 
 As you create the Blumix Services, you'll need to create service credentials and get the
 username and password:
@@ -89,7 +96,7 @@ CONVERSATION_PASSWORD=<add_conversation_password>
 WORKSPACE_ID=<add_conversation_workspace>
 ```
 
-## 4. Configure Watson Conversation
+### 4. Configure Watson Conversation
 
 Launch the **Watson Conversation** tool. Use the **import** icon button on the right
 
@@ -107,13 +114,13 @@ workspace and select **View details**.
 
 Put this Workspace ID into the .env file as ``WORKSPACE_ID``.
 
-## 5. Run the application
+### 5. Run the application
 
-### If you used the Deploy to Bluemix button...
+#### If you used the Deploy to IBM Cloud button...
 
-If you used ``Deploy to Bluemix``, the setup is automatic.
+If you used ``Deploy to IBM Cloud``, the setup is automatic.
 
-### If you decided to run the app locally...
+#### If you decided to run the app locally...
 
 ```
 $ npm install
@@ -223,17 +230,17 @@ Type reset to start again and test this by adding the phrase "to eat there...":
 * Deploy using Cloud Foundry 'cf push' gives:
 
 ``FAILED
-Could not find service <Watson_service> to bind to <Bluemix_application>``
+Could not find service <Watson_service> to bind to <IBM_Cloud_application>``
 
 If you name your service wcsi-conversation-service, this should work.
 When you use `cf push`, it is trying to bind to the services listed in the manifest.yml.
 
 So, there are 2 ways you can get this to work:
 
-* Change the names of your Bluemix services to match the names in the manifest.
-* Change the names in the manifest to match the names of your Bluemix services.
+* Change the names of your IBM Cloud services to match the names in the manifest.
+* Change the names in the manifest to match the names of your IBM Cloud services.
 
->NOTE: The 'Deploy to Bluemix' button solves this issue by creating the services on the fly (with the correct names).
+>NOTE: The 'Deploy to IBM Cloud' button solves this issue by creating the services on the fly (with the correct names).
 
 
 # License
@@ -242,7 +249,7 @@ So, there are 2 ways you can get this to work:
 
 # Privacy Notice
 
-If using the Deploy to Bluemix button some metrics are tracked, the following
+If using the Deploy to IBM Cloud button some metrics are tracked, the following
 information is sent to a [Deployment Tracker](https://github.com/IBM-Bluemix/cf-deployment-tracker-service) service
 on each deployment:
 
@@ -258,8 +265,8 @@ on each deployment:
 * Number of instances for each bound service and associated plan information
 
 This data is collected from the setup.py file in the sample application and the ``VCAP_APPLICATION``
-and ``VCAP_SERVICES`` environment variables in IBM Bluemix and other Cloud Foundry platforms. This
-data is used by IBM to track metrics around deployments of sample applications to IBM Bluemix to
+and ``VCAP_SERVICES`` environment variables in IBM Cloud and other Cloud Foundry platforms. This
+data is used by IBM to track metrics around deployments of sample applications to IBM Cloud to
 measure the usefulness of our examples, so that we can continuously improve the content we offer
 to you. Only deployments of sample applications that include code to ping the Deployment Tracker
 service will be tracked.
@@ -268,4 +275,17 @@ service will be tracked.
 
 To disable tracking, simply remove ``cf_deployment_tracker.track()`` from the
 ``run.py`` file in the top level directory.
+
+# Links
+
+* [Demo on youtube](https://youtu.be/6QlAnqSiWvo)
+* [IBM Cloud Conversation Docs](https://console.bluemix.net/docs/services/conversation/dialog-build.html#dialog-build)
+* [Blog for Conversation Slots Code Pattern](https://developer.ibm.com/code/2017/09/19/managing-resources-efficiently-watson-conversation-slots/)
+
+# Learn more
+
+* **Artificial Intelligence Code Patterns**: Enjoyed this Code Pattern? Check out our other [AI Code Patterns](https://developer.ibm.com/code/technologies/artificial-intelligence/).
+* **AI and Data Code Pattern Playlist**: Bookmark our [playlist](https://www.youtube.com/playlist?list=PLzUbsvIyrNfknNewObx5N7uGZ5FKH0Fde) with all of our Code Pattern videos
+* **With Watson**: Want to take your Watson app to the next level? Looking to utilize Watson Brand assets? [Join the With Watson program](https://www.ibm.com/watson/with-watson/) to leverage exclusive brand, marketing, and tech resources to amplify and accelerate your Watson embedded commercial solution.
+* **Kubernetes on IBM Cloud**: Deliver your apps with the combined the power of [Kubernetes and Docker on IBM Cloud](https://www.ibm.com/cloud-computing/bluemix/containers)
 
