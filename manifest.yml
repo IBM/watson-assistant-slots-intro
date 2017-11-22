@@ -13,5 +13,3 @@ applications:
   - wcsi-conversation-service
   env:
     NPM_CONFIG_PRODUCTION: false
-  buildpack: sdk-for-nodejs
-  random-route: true
