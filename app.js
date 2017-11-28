@@ -38,7 +38,7 @@ var workspaceID; // workspaceID will be set when the workspace is created or val
 
 // Create the service wrapper
 var conversation = watson.conversation({
-  url: 'https://gateway.watsonplatform.net/conversation/api',
+  url: conversationCredentials.url,
   username: conversationCredentials.username,
   password: conversationCredentials.password,
   version_date: '2016-07-11',

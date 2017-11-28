@@ -1,11 +1,13 @@
 FROM node
+
+RUN apt-get update && apt-get install -y jq
+
 EXPOSE 3000
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+WORKDIR /app
 
-ADD . /usr/src/app
+ADD . /app
 
-RUN npm install 
+RUN npm install
 
-CMD [ "/usr/src/app/run-server.sh"]
+CMD [ "/app/run-server.sh"]
