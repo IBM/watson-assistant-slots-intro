@@ -28,8 +28,8 @@ function run() {
 
         function kill(code) {
             server.close(function() {
-            // eslint-disable-next-line no-process-exit
-            process.exit(code);
+                // eslint-disable-next-line no-process-exit
+                process.exit(code);
             });
         }
 
@@ -38,11 +38,11 @@ function run() {
             casper.stdout.pipe(process.stdout);
 
             casper.on('error', function(error) {
-            // eslint-disable-next-line
-            console.error(error);
-            server.close(function() {
-                process.exit(1);
-            });
+                // eslint-disable-next-line
+                console.error(error);
+                server.close(function() {
+                    process.exit(1);
+                });
             });
 
             casper.on('close', kill);
