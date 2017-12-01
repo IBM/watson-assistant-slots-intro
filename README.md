@@ -20,7 +20,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 1. User sends messages to the application (running locally or on IBM Cloud).
 2. The application sends the user message to IBM Watson Conversation service, and displays the ongoing chat in a web page.
-3. Watson Conversation uses the Slots feature to fill out the required fields for a pizza order, and sends requests for additional information back to the running application. 
+3. Watson Conversation uses the Slots feature to fill out the required fields for a pizza order, and sends requests for additional information back to the running application.
 
 ## Included Components
 
@@ -47,13 +47,13 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 Click the ``Deploy to IBM Cloud`` button and hit ``Create`` and then jump to step 5.
 
-**OR** 
+**OR**
 
 ## Run in container
 
 Run in a container on IBM Cloud, using [these instructions](doc/source/Container.md).
 
- **OR** 
+ **OR**
 
 ## Run locally
  Perform steps 1-5:

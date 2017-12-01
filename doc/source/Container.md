@@ -111,9 +111,9 @@ $ kubectl create -f $POD_NAME
 
 ```
 $ bx cs workers $CLUSTER_NAME
-``` 
+```
 
-* Identify the external port your pod is listening on: 
+* Identify the external port your pod is listening on:
 
 > Note: The Dockerfile determines the port that the container listens on using the `EXPOSE <port>` command. Kubernetes maps this to a publicly addressable port:
 
@@ -150,7 +150,7 @@ The secret is mapped into the container as an environment variable through the K
                 key: binding
 ```
 
-* For an application that expects the service credentials to be set in the environment variables `CONVERSATION_USERNAME` and `CONVERSATION_PASSWORD`, we set these in the container environment. 
+* For an application that expects the service credentials to be set in the environment variables `CONVERSATION_USERNAME` and `CONVERSATION_PASSWORD`, we set these in the container environment.
 
 * Example usage is to have a script that is run when the container is started. We can then parse them from the  environment variable `$CONTAINER_ENV_VARIABLE` using jq:
 
