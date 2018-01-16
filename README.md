@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/IBM/watson-conversation-slots-intro.svg?branch=master)](https://travis-ci.org/IBM/watson-conversation-slots-intro)
 ![IBM Cloud Deployments](https://metrics-tracker.mybluemix.net/stats/8cbdd782337103af2cd09faf13a2481b/badge.svg)
 
+
 # Creating a Pizza ordering Chatbot using Watson Conversation Slots feature
 
 In this Code Pattern, we will use the Watson Conversation Slots feature to
