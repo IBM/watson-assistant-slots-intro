@@ -1,6 +1,6 @@
-# Running watson-conversation-slots-intro in a Container on Bluemix with Kubernetes
+# Running watson-conversation-slots-intro in a Container on IBM Cloud with Kubernetes
 
-This directory allows you to deploy the `watson-conversation-slots-intro` application into a container running on Bluemix, using Kubernetes.
+This directory allows you to deploy the `watson-conversation-slots-intro` application into a container running on IBM Cloud, using Kubernetes.
 
 The commands below use environment variables in order to define the specific details of the deployment. Either run the following to export the ENV variables, or substitute your names in the commands or exports:
 ```
@@ -36,7 +36,7 @@ export KUBECONFIG=/home/rak/.bluemix/plugins/container-service/clusters/Kate/kub
 
 ## Create the Watson Conversation Service and bind to your cluster
 
-Either follow the instructions to [Create a Conversation Service](https://console.ng.bluemix.net/catalog/services/conversation) or perform the following from the Bluemix CLI.
+Either follow the instructions to [Create a Conversation Service](https://console.ng.bluemix.net/catalog/services/conversation) or perform the following from the IBM Cloud CLI.
 
 * Create the Watson Conversation service:
 

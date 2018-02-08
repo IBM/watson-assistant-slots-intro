@@ -3,7 +3,7 @@
 echo -e "${label_color}Starting build script${no_color}"
 
 # The IBM Container Service CLI (ice), Git client (git), IDS Inventory CLI (ids-inv) and Python 2.7.3 (python) have been installed.
-# Based on the organization and space selected in the Job credentials are in place for both IBM Container Service and IBM Bluemix
+# Based on the organization and space selected in the Job credentials are in place for both IBM Container Service and IBM Cloud
 #####################
 # Run unit tests    #
 #####################

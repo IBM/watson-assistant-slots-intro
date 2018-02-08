@@ -250,7 +250,7 @@ So, there are 2 ways you can get this to work:
 # Privacy Notice
 
 If using the Deploy to IBM Cloud button some metrics are tracked, the following
-information is sent to a [Deployment Tracker](https://github.com/IBM-Bluemix/cf-deployment-tracker-service) service
+information is sent to a [Deployment Tracker](https://github.com/IBM-IBM Cloud/cf-deployment-tracker-service) service
 on each deployment:
 
 * Python package version
