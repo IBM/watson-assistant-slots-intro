@@ -1,14 +1,26 @@
 {
-  "name": "Assemble a pizza-ordering chatbot dialog",
-  "description": "Easily create a complex dialog with Watson Conversation Slots, Node.js, and IBM Container Service",
-  "thumbnailURL": "blueprint/thumbnail.svg",
   "appIconURL": "blueprint/appicon.svg",
-  "previewURLs": [],
-  "type": "WEB",
-  "tags": [
-    "node",
-    "watson"
-  ],
+  "description": "Easily create a complex dialog with Watson Conversation Slots, Node.js, and IBM Container Service",
+  "email": "cloud@us.ibm.com",
+  "generatorOptions": {
+    "generator-git-starterkit-credentials-builder": {
+      "scope": "@arf",
+      "version": "0.x.x"
+    },
+    "generator-ibm-cloud-enablement": {
+      "options": {
+        "port": "3000"
+      },
+      "version": "0.8.x"
+    },
+    "generator-ibm-service-enablement": {
+      "version": "0.6.4"
+    },
+    "generator-starterkit-content-downloader": {
+      "scope": "@arf",
+      "version": "0.x.x"
+    }
+  },
   "generators": {
     "node": [
       "generator-starterkit-content-downloader",
@@ -17,24 +29,8 @@
       "generator-git-starterkit-credentials-builder"
     ]
   },
-  "generatorOptions": {
-    "generator-git-starterkit-credentials-builder": {
-      "registry": "https://npm-registry.whitewater.ibm.com",
-      "scope": "@arf",
-      "version": "0.0.x"
-    },
-    "generator-starterkit-content-downloader": {
-      "registry": "https://npm-registry.whitewater.ibm.com",
-      "scope": "@arf",
-      "version": "0.0.x"
-    },
-    "generator-ibm-cloud-enablement": {
-      "version": "0.0.x"
-    },
-    "generator-ibm-service-enablement": {
-       "version": "0.0.x"
-    }
-  },
+  "name": "Assemble a pizza-ordering chatbot dialog",
+  "previewURLs": [],
   "requiredCapabilities": [
     "conversation"
   ],
@@ -44,5 +40,10 @@
   "servicePlans": {
     "conversation": "free"
   },
-  "email": "cloud@us.ibm.com"
+  "tags": [
+    "devex",
+    "cli"
+  ],
+  "thumbnailURL": "blueprint/thumbnail.svg",
+  "type": "WEB"
 }
