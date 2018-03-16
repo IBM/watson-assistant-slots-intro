@@ -9,7 +9,7 @@ $ export CONVERSATION_SERVICE=conversation-service-watson-pizzeria
 $ export CONFIG_MAP=watson-pizzeria-config
 $ export POD_NAME=watson-pizzeria-pod.yml
 $ export KUBE_SERVICE=pizza-bot
-$ export CONTAINER_ENV_VARIABLE=CONVERSATION_SERVICE_WATSON_PIZZERIA
+$ export CONTAINER_ENV_VARIABLE=service_watson_conversation
 ```
 
 # Steps
