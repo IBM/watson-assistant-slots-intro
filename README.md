@@ -3,6 +3,8 @@
 
 # Creating a Pizza ordering Chatbot using Watson Assistant Slots feature
 
+> Watson Conversation is now Watson Assistant. Although some images in this code pattern may show the service as Watson Conversation, the steps and processes will still work.
+
 In this Code Pattern, we will use the Watson Assistant Slots feature to
 build a chatbot that takes a pizza order. The needed information such as size, type,
 and ingredient choices can all be entered within one Assistant Node, unlike
