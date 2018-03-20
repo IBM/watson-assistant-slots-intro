@@ -16,7 +16,7 @@
 
 'use strict';
 
-var WatsonAssistantSetup = require('./lib/watson-conversation-setup');
+var WatsonConversationSetup = require('./lib/watson-conversation-setup');
 var DEFAULT_NAME = 'watson-conversation-slots-intro';
 var fs = require('fs'); // file system for loading JSON
 var vcapServices = require('vcap_services');
@@ -45,7 +45,7 @@ var conversation = watson.conversation({
   version: 'v1'
 });
 
-var conversationSetup = new WatsonAssistantSetup(conversation);
+var conversationSetup = new WatsonConversationSetup(conversation);
 var workspaceJson = JSON.parse(fs.readFileSync('data/watson-pizzeria.json'));
 var conversationSetupParams = { default_name: DEFAULT_NAME, workspace_json: workspaceJson };
 conversationSetup.setupConversationWorkspace(conversationSetupParams, (err, data) => {
