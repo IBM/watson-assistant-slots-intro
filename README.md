@@ -279,8 +279,8 @@ To disable tracking, simply remove ``cf_deployment_tracker.track()`` from the
 # Links
 
 * [Demo on youtube](https://youtu.be/6QlAnqSiWvo)
-* [IBM Cloud Assistant Docs](https://console.bluemix.net/docs/services/conversation/dialog-build.html#dialog-build)
-* [Blog for Assistant Slots Code Pattern](https://developer.ibm.com/code/2017/09/19/managing-resources-efficiently-watson-conversation-slots/)
+* [IBM Watson Assistant Docs](https://console.bluemix.net/docs/services/conversation/dialog-build.html#dialog-build)
+* [Blog for IBM Watson Assistant Slots Code Pattern](https://developer.ibm.com/code/2017/09/19/managing-resources-efficiently-watson-conversation-slots/)
 
 # Learn more
 

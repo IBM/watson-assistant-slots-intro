@@ -16,7 +16,7 @@
 
 'use strict';
 
-var WatsonAssistant for BusinessSetup = require('./lib/watson-conversation-setup');
+var WatsonAssistantSetup = require('./lib/watson-conversation-setup');
 var DEFAULT_NAME = 'watson-conversation-slots-intro';
 var fs = require('fs'); // file system for loading JSON
 var vcapServices = require('vcap_services');
@@ -45,14 +45,14 @@ var conversation = watson.conversation({
   version: 'v1'
 });
 
-var conversationSetup = new WatsonAssistant for BusinessSetup(conversation);
+var conversationSetup = new WatsonAssistantSetup(conversation);
 var workspaceJson = JSON.parse(fs.readFileSync('data/watson-pizzeria.json'));
 var conversationSetupParams = { default_name: DEFAULT_NAME, workspace_json: workspaceJson };
-conversationSetup.setupAssistant for BusinessWorkspace(conversationSetupParams, (err, data) => {
+conversationSetup.setupAssistantWorkspace(conversationSetupParams, (err, data) => {
   if (err) {
     //handleSetupError(err);
   } else {
-    console.log('Assistant for Business is ready!');
+    console.log('Assistant is ready!');
     workspaceID = data;
   }
 });
@@ -63,7 +63,7 @@ app.post('/api/message', function(req, res) {
   if (!workspaceID) {
     return res.json({
       output: {
-        text: 'Assistant for Business initialization in progress. Please try again.'
+        text: 'Assistant initialization in progress. Please try again.'
       }
     });
   }
@@ -85,8 +85,8 @@ app.post('/api/message', function(req, res) {
 
 /**
  * Updates the response text using the intent confidence
- * @param  {Object} input The request to the Assistant for Business service
- * @param  {Object} response The response from the Assistant for Business service
+ * @param  {Object} input The request to the Assistant service
+ * @param  {Object} response The response from the Assistant service
  * @return {Object}          The response with the updated message
  */
 function updateMessage(input, response) {
