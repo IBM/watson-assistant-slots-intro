@@ -52,7 +52,7 @@ conversationSetup.setupConversationWorkspace(conversationSetupParams, (err, data
   if (err) {
     //handleSetupError(err);
   } else {
-    console.log('Conversation is ready!');
+    console.log('Assistant is ready!');
     workspaceID = data;
   }
 });
@@ -63,7 +63,7 @@ app.post('/api/message', function(req, res) {
   if (!workspaceID) {
     return res.json({
       output: {
-        text: 'Conversation initialization in progress. Please try again.'
+        text: 'Assistant initialization in progress. Please try again.'
       }
     });
   }
@@ -85,8 +85,8 @@ app.post('/api/message', function(req, res) {
 
 /**
  * Updates the response text using the intent confidence
- * @param  {Object} input The request to the Conversation service
- * @param  {Object} response The response from the Conversation service
+ * @param  {Object} input The request to the Assistant service
+ * @param  {Object} response The response from the Assistant service
  * @return {Object}          The response with the updated message
  */
 function updateMessage(input, response) {

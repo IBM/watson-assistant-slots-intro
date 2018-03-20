@@ -1,30 +1,30 @@
 [![Build Status](https://travis-ci.org/IBM/watson-conversation-slots-intro.svg?branch=master)](https://travis-ci.org/IBM/watson-conversation-slots-intro)
 ![IBM Cloud Deployments](https://metrics-tracker.mybluemix.net/stats/8cbdd782337103af2cd09faf13a2481b/badge.svg)
 
-# Creating a Pizza ordering Chatbot using Watson Conversation Slots feature
+# Creating a Pizza ordering Chatbot using Watson Assistant Slots feature
 
-In this Code Pattern, we will use the Watson Conversation Slots feature to
+In this Code Pattern, we will use the Watson Assistant Slots feature to
 build a chatbot that takes a pizza order. The needed information such as size, type,
-and ingredient choices can all be entered within one Conversation Node, unlike
-with previous versions of Conversation.
+and ingredient choices can all be entered within one Assistant Node, unlike
+with previous versions of Assistant.
 
 When the reader has completed this Code Pattern, they will understand how to:
 
-* Create a chatbot dialog with Watson Conversation
-* Use the power of Conversation Slots to more efficiently populate data fields
-* Use Conversation Slots to handle various inputs within one Node.
+* Create a chatbot dialog with Watson Assistant
+* Use the power of Assistant Slots to more efficiently populate data fields
+* Use Assistant Slots to handle various inputs within one Node.
 
 ![](doc/source/images/architecture.png)
 
 ## Flow
 
 1. User sends messages to the application (running locally or on IBM Cloud).
-2. The application sends the user message to IBM Watson Conversation service, and displays the ongoing chat in a web page.
-3. Watson Conversation uses the Slots feature to fill out the required fields for a pizza order, and sends requests for additional information back to the running application.
+2. The application sends the user message to IBM Watson Assistant service, and displays the ongoing chat in a web page.
+3. Watson Assistant uses the Slots feature to fill out the required fields for a pizza order, and sends requests for additional information back to the running application.
 
 ## Included Components
 
-* [IBM Watson Conversation](https://www.ibm.com/watson/developercloud/conversation.html): Build, test and deploy a bot or virtual agent across mobile devices, messaging platforms, or even on a physical robot.
+* [IBM Watson Assistant](https://www.ibm.com/watson/developercloud/conversation.html): Build, test and deploy a bot or virtual agent across mobile devices, messaging platforms, or even on a physical robot.
 
 ## Featured technologies
 * [Node.js](https://nodejs.org/): An asynchronous event driven JavaScript runtime, designed to build scalable applications.
@@ -61,7 +61,7 @@ Run in a container on IBM Cloud, using [these instructions](doc/source/Container
 1. [Clone the repo](#1-clone-the-repo)
 2. [Create IBM Cloud services](#2-create-ibm-cloud-services)
 3. [Get IBM Cloud credentials and add to .env](#3-get-ibm-cloud-services-credentials-and-add-to-env-file)
-4. [Configure Watson Conversation](#4-configure-watson-conversation)
+4. [Configure Watson Assistant](#4-configure-watson-conversation)
 5. [Run the application](#5-run-the-application)
 
 ### 1. Clone the repo
@@ -71,13 +71,13 @@ Clone `watson-conversation-slots-intro` locally. In a terminal, run:
   `$ git clone https://github.com/ibm/watson-conversation-slots-intro`
 
 We’ll be using the file [`data/watson-pizzeria.json`](data/watson-pizzeria.json) to upload
-the Conversation Intents, Entities, and Dialog Nodes.
+the Assistant Intents, Entities, and Dialog Nodes.
 
 ### 2. Create IBM Cloud services
 
 Create the following service and name it `wcsi-conversation-service`:
 
-  * [**Watson Conversation**](https://console.ng.bluemix.net/catalog/services/conversation)
+  * [**Watson Assistant**](https://console.ng.bluemix.net/catalog/services/conversation)
 
 ### 3. Get IBM Cloud Services Credentials and add to .env file
 
@@ -96,9 +96,9 @@ CONVERSATION_PASSWORD=<add_conversation_password>
 WORKSPACE_ID=<add_conversation_workspace>
 ```
 
-### 4. Configure Watson Conversation
+### 4. Configure Watson Assistant
 
-Launch the **Watson Conversation** tool. Use the `import` icon button on the right
+Launch the **Watson Assistant** tool. Use the `import` icon button on the right
 
 <p align="center">
   <img width="50%" height="50%" src="doc/source/images/import_conversation_workspace.png">
@@ -127,9 +127,9 @@ $ npm install
 $ npm start
 ```
 
-# Conversation Slots Discussion
+# Assistant Slots Discussion
 
-The power of Slots is in how it reduces the number of nodes required to implement logic in your Watson Conversation Dialog. Here's a partial conversation Dialog using the old method:
+The power of Slots is in how it reduces the number of nodes required to implement logic in your Watson Assistant Dialog. Here's a partial conversation Dialog using the old method:
 
 ![](doc/source/images/pizzaOldWay.png)
 
@@ -190,7 +190,7 @@ is not found. We've handlers for the intents "help" and "reset":
 Note that we edit the json directly when we handle the Reset. We'll
 set all the fields to null in order to begin again.
 
-# Conversation Example
+# Assistant Example
 
 Let's look at an example conversation and the associated json.
 With your Watson Pizzeria running, start a dialog and begin with
@@ -199,7 +199,7 @@ telling the Pizza Bot you want a large pizza:
 ![](doc/source/images/pizzaEX1orderLarge.png)
 
 The 'User Input' shows you the "input"{"text"} field, as well as come of the
-"context" that is mostly used for Conversation to keep track of internal state.
+"context" that is mostly used for Assistant to keep track of internal state.
 Scroll Down to `Watson Understands` and look at `intents`:
 
 ![](doc/source/images/pizzaEX2WatsonUnderstandsOrderSize.png)
@@ -279,8 +279,8 @@ To disable tracking, simply remove ``cf_deployment_tracker.track()`` from the
 # Links
 
 * [Demo on youtube](https://youtu.be/6QlAnqSiWvo)
-* [IBM Cloud Conversation Docs](https://console.bluemix.net/docs/services/conversation/dialog-build.html#dialog-build)
-* [Blog for Conversation Slots Code Pattern](https://developer.ibm.com/code/2017/09/19/managing-resources-efficiently-watson-conversation-slots/)
+* [IBM Watson Assistant Docs](https://console.bluemix.net/docs/services/conversation/dialog-build.html#dialog-build)
+* [Blog for IBM Watson Assistant Slots Code Pattern](https://developer.ibm.com/code/2017/09/19/managing-resources-efficiently-watson-conversation-slots/)
 
 # Learn more
 
