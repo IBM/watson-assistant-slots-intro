@@ -48,7 +48,7 @@ var conversation = watson.conversation({
 var conversationSetup = new WatsonAssistantSetup(conversation);
 var workspaceJson = JSON.parse(fs.readFileSync('data/watson-pizzeria.json'));
 var conversationSetupParams = { default_name: DEFAULT_NAME, workspace_json: workspaceJson };
-conversationSetup.setupAssistantWorkspace(conversationSetupParams, (err, data) => {
+conversationSetup.setupConversationWorkspace(conversationSetupParams, (err, data) => {
   if (err) {
     //handleSetupError(err);
   } else {
