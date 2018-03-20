@@ -1,4 +1,4 @@
 #!/bin/bash -x
-export CONVERSATION_PASSWORD=$(echo "$CONVERSATION_SERVICE_WATSON_PIZZERIA" | jq -r '.password')
-export CONVERSATION_USERNAME=$(echo "$CONVERSATION_SERVICE_WATSON_PIZZERIA" | jq -r '.username')
+export CONVERSATION_USERNAME=$(echo "$service_watson_conversation" | jq -r '.username')
+export CONVERSATION_PASSWORD=$(echo "$service_watson_conversation" | jq -r '.password')
 npm start

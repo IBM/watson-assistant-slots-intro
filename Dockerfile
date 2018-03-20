@@ -7,6 +7,7 @@ EXPOSE 3000
 WORKDIR /app
 
 ADD . /app
+RUN chmod +x /app/run-server.sh
 
 RUN npm install
 
