@@ -81,9 +81,9 @@ Create the following service and name it `wcsi-conversation-service`:
 
   * [**Watson Assistant**](https://console.ng.bluemix.net/catalog/services/conversation)
 
-### 3. Get IBM Cloud Services Credentials and add to .env file
+### 3. Get IBM Cloud service credentials and add to .env file
 
-As you create the Bluemix Services, you'll need to create service credentials and get the
+As you create the IBM Cloud services, you'll need to create service credentials and get the
 username and password:
 
 ![](doc/source/images/WatsonCred1.png)
