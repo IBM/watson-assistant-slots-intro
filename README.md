@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/IBM/watson-conversation-slots-intro.svg?branch=master)](https://travis-ci.org/IBM/watson-conversation-slots-intro)
-![IBM Cloud Deployments](https://metrics-tracker.mybluemix.net/stats/8cbdd782337103af2cd09faf13a2481b/badge.svg)
 
 # Creating a Pizza ordering Chatbot using Watson Assistant Slots feature
 
@@ -45,7 +44,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 ## Deploy to IBM Cloud
 
-[![Deploy to IBM Cloud](https://metrics-tracker.mybluemix.net/stats/8cbdd782337103af2cd09faf13a2481b/button.svg)](https://bluemix.net/deploy?repository=https://github.com/IBM/watson-conversation-slots-intro)
+[![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/watson-conversation-slots-intro)
 
 Click the ``Deploy to IBM Cloud`` button and hit ``Create`` and then jump to step 5.
 
@@ -248,30 +247,6 @@ So, there are 2 ways you can get this to work:
 # License
 
 [Apache 2.0](LICENSE)
-
-# Privacy Notice
-
-Sample web applications that include this package may be configured to track deployments to [IBM Cloud](https://www.bluemix.net/) and other Cloud Foundry platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
-
-* Node.js package version
-* Node.js repository URL
-* Application Name (`application_name`)
-* Application GUID (`application_id`)
-* Application instance index number (`instance_index`)
-* Space ID (`space_id`) or OS username
-* Application Version (`application_version`)
-* Application URIs (`application_uris`)
-* Cloud Foundry API (`cf_api`)
-* Labels of bound services
-* Number of instances for each bound service and associated plan information
-* Metadata in the repository.yaml file
-
-This data is collected from the `package.json` and `repository.yaml` file in the sample application and the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Cloud and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Cloud to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
-
-## Disabling Deployment Tracking
-
-To disable tracking, simply remove ``cf_deployment_tracker.track()`` from the
-``app.js`` file in the top level directory.
 
 # Links
 

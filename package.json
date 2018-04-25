@@ -7,7 +7,7 @@
     "start": "node server.js",
     "test-integration": "casperjs test ./test/integration/test.*.js",
     "test-integration-runner": "NODE_ENV=test node casper-runner.js",
-    "test": "npm run lint && npm run test-unit && npm run test-integration-runner",
+    "test": "npm run test-integration-runner",
     "test-unit": "istanbul cover ./node_modules/mocha/bin/_mocha test/unit",
     "lint": "eslint .",
     "autofix": "eslint --fix .",
@@ -22,7 +22,6 @@
     "body-parser": "^1.15.2",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
-    "metrics-tracker-client": "^0.1.9",
     "vcap_services": "^0.2.0",
     "watson-developer-cloud": "^2.31.1"
   },
