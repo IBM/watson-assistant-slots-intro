@@ -1,7 +1,7 @@
 ---
 declared-services:
   wcsi-conversation-service:
-    label: conversation
+    label: wcsi-conversation-service
     plan: free
 applications:
 - name: watson-conversation-slots-intro
