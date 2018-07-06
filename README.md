@@ -99,11 +99,11 @@ WORKSPACE_ID=<add_conversation_workspace>
 
 ### Authentication using IAM
 
-The Watson Assistant service has a new API authentication process. You use IAM for authentication. You can pass either a bearer token or an API key. Tokens support authenticated requests without embedding service credentials in every call. API keys use basic authentication.
+Using IAM for authentication, you can pass either a bearer token or an API key. Tokens support authenticated requests without embedding service credentials in every call. API keys use basic authentication.
 
 ![](https://github.com/IBM/pattern-images/raw/master/watson-assistant/watson_assistant_api_key.png)
 
-Replace the existing content of `.env` file to:
+If the service credentials from IBM Watson Assistant is using IAM authentication,replace the existing content of `.env` file to:
 
 ```
 # Environment variables
