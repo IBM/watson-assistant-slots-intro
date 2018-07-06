@@ -97,14 +97,9 @@ CONVERSATION_PASSWORD=<add_conversation_password>
 WORKSPACE_ID=<add_conversation_workspace>
 ```
 
-### New API authentication process
+### Authentication using IAM
 
-The Watson Assistant service has a new API authentication process for service instances that are hosted in the following regions:
-
-* Washington, DC (us-east) as of 14 June 2018
-* Sydney, Australia (au-syd) as of 7 May 2018
-
-For new service instances in the regions listed above, you use IAM for authentication. You can pass either a bearer token or an API key. Tokens support authenticated requests without embedding service credentials in every call. API keys use basic authentication.
+The Watson Assistant service has a new API authentication process. You use IAM for authentication. You can pass either a bearer token or an API key. Tokens support authenticated requests without embedding service credentials in every call. API keys use basic authentication.
 
 ![](https://github.com/IBM/pattern-images/raw/master/watson-assistant/watson_assistant_api_key.png)
 
@@ -112,16 +107,9 @@ Replace the existing content of `.env` file to:
 
 ```
 # Environment variables
-WORKSPACE_ID=<put Watson Conversation Worksace ID here>
-API_KEY=<put API_KEY here>
-```
-Go to `app.js` and change the code that initializes `Assistant` in `line 38` to :
- 
-```
-var conversation = watson.conversation({  
-  iam_apikey: conversationCredentials.API_KEY
-});
-
+WORKSPACE_ID=<add conversation workspace>
+CONVERSATION_IAM_APIKEY=<add apikey here>
+CONVERSATION_URL=<add url here>
 ```
  
 

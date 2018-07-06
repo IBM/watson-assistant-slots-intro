@@ -34,13 +34,8 @@ app.use(bodyParser.json());
 
 var workspaceID; // workspaceID will be set when the workspace is created or validated.
 
-// Create the service wrapper
-var conversation = watson.conversation({
-  url: conversationCredentials.url,
-  username: conversationCredentials.username,
-  password: conversationCredentials.password,
-  version_date: '2016-07-11',
-  version: 'v1'
+const conversation = new watson.AssistantV1({ 
+  version: '2018-02-16'
 });
 
 var conversationSetup = new WatsonConversationSetup(conversation);
