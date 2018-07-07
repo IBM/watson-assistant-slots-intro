@@ -82,34 +82,42 @@ Create the following service and name it `wcsi-conversation-service`:
 
 ### 3. Get IBM Cloud service credentials and add to .env file
 
-As you create the IBM Cloud services, you'll need to create service credentials and get the
-username and password:
+As you create the IBM Cloud services, you'll need to create service credentials. You might get either IAM or username/password based credentials based on the region.
+
+First of all, move the `watson-conversation-slots-intro/env.sample` file to ``/.env``.
+
+* If the service credentials from IBM Watson Assistant is username/password based as below populate the username, password and workspace_id and comment out the IAM credentials part.
 
 ![](doc/source/images/WatsonCred1.png)
 
-Move the `watson-conversation-slots-intro/env.example` file to ``/.env`` and populate the service
-credentials as you create the credentials:
 
 ```
-# Watson conversation
-CONVERSATION_USERNAME=<add_conversation_username>
-CONVERSATION_PASSWORD=<add_conversation_password>
-WORKSPACE_ID=<add_conversation_workspace>
+WORKSPACE_ID=<put workspace id here>
+
+# Watson Assistant authentication using username/password authentication
+CONVERSATION_USERNAME=<put assistant username here>
+CONVERSATION_PASSWORD=<put assistant password here>
+
+# Watson Assistant Authentication using IAM
+#CONVERSATION_IAM_APIKEY=<put assistant IAM apikey here>
+#CONVERSATION_URL=<put assistant url here>
 ```
 
-### Authentication using IAM
-
-Using IAM for authentication, you can pass either a bearer token or an API key. Tokens support authenticated requests without embedding service credentials in every call. API keys use basic authentication.
+* If the service credentials from IBM Watson Assistant is IAM based as below, populate the IAM apikey, url, and workspace_id and comment out the username/password part
 
 ![](https://github.com/IBM/pattern-images/raw/master/watson-assistant/watson_assistant_api_key.png)
 
-If the service credentials from IBM Watson Assistant is using IAM authentication,replace the existing content of `.env` file to:
 
 ```
-# Environment variables
-WORKSPACE_ID=<add conversation workspace>
-CONVERSATION_IAM_APIKEY=<add apikey here>
-CONVERSATION_URL=<add url here>
+WORKSPACE_ID=<put workspace id here>
+
+# Watson Assistant authentication using username/password authentication
+#CONVERSATION_USERNAME=<put assistant username here>
+#CONVERSATION_PASSWORD=<put assistant password here>
+
+# Watson Assistant Authentication using IAM
+CONVERSATION_IAM_APIKEY=<put assistant IAM apikey here>
+CONVERSATION_URL=<put assistant url here>
 ```
  
 
