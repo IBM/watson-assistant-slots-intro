@@ -84,7 +84,7 @@ Create the following service and name it `wcsi-conversation-service`:
 
 As you create the IBM Cloud services, you'll need to create service credentials. You might get either IAM or username/password based credentials based on the region.
 
-First of all, move the `watson-conversation-slots-intro/env.sample` file to ``/.env``.
+First of all, move the `watson-conversation-slots-intro/env.sample` file to ``watson-conversation-slots-intro/.env``.
 
 * If the service credentials from IBM Watson Assistant is username/password based as below populate the username, password and workspace_id and comment out the IAM credentials part.
 
