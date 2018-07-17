@@ -4,7 +4,7 @@
 
 *다른 언어로 보기 : [English](README.md)*
 
-> Watson Conversation이 Watson Assistant로 변경되었습니다. 이 코드 패턴에 있는 몇몇 이미지들은 이러한 변경 사항이 반영되기 전인 Watson Conversation 서비스를 소개할도 있지만, 과정상 동일하게 작동하오니 참고하시기 바랍니다.
+> Watson Conversation이 Watson Assistant로 변경되었습니다. 이 코드 패턴에 있는 몇몇 이미지들은 이러한 변경 사항이 반영되기 전 버전인 Watson Conversation 서비스로 소개할 수 있지만, 과정상 동일하게 작동하오니 참고하시기 바랍니다.
 
 이 코드 패턴에서 우리는 피자 주문용 챗봇을 만드는데 Watson Assitant Slots 기능을 사용합니다. 이전 버전과는 달리 피자 사이즈, 종류, 토핑 선택 등 모든 필요한 정보들을 한 개의 Assitant 노드에 입력할 수 있습니다.
 
