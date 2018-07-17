@@ -80,11 +80,11 @@ Assistant Intents, Entities, Dialog 노드를 업로드하기 위해 [`data/wats
 
 ### 3. IBM Cloud 서비스 신임정보를 받아서 .env 파일에 추가하기
 
-IBM Cloud 서비스를 생성할 때 서비스 신임정보를 생성해야 합니다. 설정하신 지역(region)에 따라 IAM 또는 username/password 기반 신임정보 받을 수 있습니다.
+IBM Cloud 서비스를 생성할 때 서비스 신임정보를 생성해야 합니다. 설정하신 지역(region)에 따라 IAM(Identify and Access Management) 또는 username/password 기반 신임정보 받을 수 있습니다.
 
 먼저 `watson-conversation-slots-intro/env.sample` 파일을 참고해 `watson-conversation-slots-intro/.env`를 생성합니다.
 
-* IBM Watson Assistant의 서비스 신임정보가 아래와 같이 사용자 이름과 패스워드 기반이라면, username, password, WorkSpace_id를 입력하고 IAM(Identify and Access Management) 신임정보 부분을 주석처리 합니다.
+* IBM Watson Assistant의 서비스 신임정보가 아래와 같이 사용자 이름과 패스워드 기반이라면, username, password, WorkSpace_id를 입력하고 IAM 신임정보 부분을 주석처리 합니다.
 
 ![](doc/source/images/WatsonCred1.png)
 
@@ -127,7 +127,7 @@ CONVERSATION_URL=<put assistant url here>
   <img src="doc/source/images/open_conversation_menu.png">
 </p>
 
-이 `Workspace ID`를 `.env file에 WORKSPACE_ID`로 넣습니다.
+이 `Workspace ID`를 `.env` file에 `WORKSPACE_ID`로 넣습니다.
 
 ### 5. 애플리케이션 실행하기
 
