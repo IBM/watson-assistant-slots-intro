@@ -2,6 +2,8 @@
 
 # Creating a Pizza ordering Chatbot using Watson Assistant Slots feature
 
+*Read this in other languages: [한국어](README-ko.md)*
+
 > Watson Conversation is now Watson Assistant. Although some images in this code pattern may show the service as Watson Conversation, the steps and processes will still work.
 
 In this Code Pattern, we will use the Watson Assistant Slots feature to
