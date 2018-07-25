@@ -2,7 +2,7 @@
 
 # Creating a Pizza ordering Chatbot using Watson Assistant Slots feature
 
-*Read this in other languages: [한국어](README-ko.md)*
+*Read this in other languages: [한국어](README-ko.md), [日本語](README-ja.md)*
 
 > Watson Conversation is now Watson Assistant. Although some images in this code pattern may show the service as Watson Conversation, the steps and processes will still work.
 
@@ -121,7 +121,7 @@ WORKSPACE_ID=<put workspace id here>
 CONVERSATION_IAM_APIKEY=<put assistant IAM apikey here>
 CONVERSATION_URL=<put assistant url here>
 ```
- 
+
 
 ### 4. Configure Watson Assistant
 
@@ -286,4 +286,3 @@ So, there are 2 ways you can get this to work:
 * **AI and Data Code Pattern Playlist**: Bookmark our [playlist](https://www.youtube.com/playlist?list=PLzUbsvIyrNfknNewObx5N7uGZ5FKH0Fde) with all of our Code Pattern videos
 * **With Watson**: Want to take your Watson app to the next level? Looking to utilize Watson Brand assets? [Join the With Watson program](https://www.ibm.com/watson/with-watson/) to leverage exclusive brand, marketing, and tech resources to amplify and accelerate your Watson embedded commercial solution.
 * **Kubernetes on IBM Cloud**: Deliver your apps with the combined the power of [Kubernetes and Docker on IBM Cloud](https://www.ibm.com/cloud-computing/bluemix/containers)
-
