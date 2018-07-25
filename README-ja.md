@@ -46,8 +46,6 @@
 
 [![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/watson-conversation-slots-intro)
 
-Click the ``Deploy to IBM Cloud`` button and hit ``Create`` and then jump to step 5.
-
 ``Deploy to IBM Cloud`` ボタンをクリックして、``Create`` を実行して [ステップ5](#5-run-the-application) にジャンプ。
 
 **もしくは**
@@ -131,8 +129,6 @@ CONVERSATION_URL=<put assistant url here>
 <p align="center">
   <img width="50%" height="50%" src="doc/source/images/import_conversation_workspace.png">
 </p>
-
-Find the local version of [`data/watson-pizzeria.json`](data/watson-pizzeria.json) and select `Import`. Find the `Workspace ID` by clicking on the context menu of the new workspace and select `View details`.
 
 ローカルにクローンしたリポジトリから [`data/watson-pizzeria.json`](data/watson-pizzeria.json) ファイルを探し、`Import` を選択してください。新しいワークスペースのコンテキストメニューをクリックし、`View details` を選択して `Workspace ID` を探します。
 
@@ -235,10 +231,11 @@ $ npm start
 
 ![](doc/source/images/pizzaEX4slotsFilled.png)
 
-Watson Pizzeria に、そのピザをレストランで食べたかったと伝えたいのですが？
+Watson Pizzeria に、「そのピザをレストランで食べたかった」と伝えたいのですが？
 遅すぎます！
 "pizza_place" のスロットはオプションなので、ユーザーにはそのプロンプトが表示されません。
 必要なスロットがいっぱいになると、"Pizza Ordering" ダイアログ・ノードを終了します。
+
 ユーザーはオプションのスロットに先に入力する必要があります。
 "reset" をタイプしてもう一度開始し、"to eat there..." というフレーズを追加して会話をテストします:
 
@@ -248,7 +245,7 @@ Watson Pizzeria に、そのピザをレストランで食べたかったと伝�
 
 # Troubleshooting
 
-* Cloud Foundry の `cf push` コマンドによるデプロイの際に以下のエラーを返す:
+* Cloud Foundry の `cf push` コマンドによるデプロイの際、以下のエラーが表示された場合:
 
 ``FAILED
 Could not find service <Watson_service> to bind to <IBM_Cloud_application>``
@@ -270,8 +267,8 @@ Could not find service <Watson_service> to bind to <IBM_Cloud_application>``
 # リンク
 
 * [YouTube 上のデモ](https://youtu.be/6QlAnqSiWvo)
-* [IBM Watson Assistant Docs](https://console.bluemix.net/docs/services/conversation/dialog-build.html#dialog-build)
-* [Blog for IBM Watson Assistant Slots Code Pattern](https://developer.ibm.com/code/2017/09/19/managing-resources-efficiently-watson-conversation-slots/)
+* [IBM Watson Assistant ドキュメント](https://console.bluemix.net/docs/services/conversation/dialog-build.html#dialog-build)
+* [IBM Watson Assistant Slots コードパターンに関するブログ](https://developer.ibm.com/code/2017/09/19/managing-resources-efficiently-watson-conversation-slots/)
 
 # もっと詳しく知る
 
