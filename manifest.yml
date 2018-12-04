@@ -14,4 +14,3 @@ applications:
   env:
     NPM_CONFIG_PRODUCTION: false
   buildpack: sdk-for-nodejs
-  random-route: true
