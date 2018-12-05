@@ -154,6 +154,8 @@ $ npm install
 $ npm start
 ```
 
+The application will be available in your browser at http://localhost:3000
+
 # Assistant Slots Discussion
 
 The power of Slots is in how it reduces the number of nodes required to implement logic in your Watson Assistant Dialog. Here's a partial conversation Dialog using the old method:
