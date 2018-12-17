@@ -4,8 +4,6 @@
 
 *Read this in other languages: [한국어](README-ko.md), [日本語](README-ja.md)*
 
-> Watson Conversation is now Watson Assistant. Although some images in this code pattern may show the service as Watson Conversation, the steps and processes will still work.
-
 In this Code Pattern, we will use the Watson Assistant Slots feature to
 build a chatbot that takes a pizza order. The needed information such as size, type,
 and ingredient choices can all be entered within one Assistant Node, unlike
@@ -17,7 +15,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 * Use the power of Assistant Slots to more efficiently populate data fields
 * Use Assistant Slots to handle various inputs within one Node.
 
-![](doc/source/images/architecture.png)
+!["Architecture"](doc/source/images/architecture.png)
 
 ## Flow
 
@@ -36,11 +34,11 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 #### Running this application with Cloud Foundry on IBM Cloud
 
-[![](http://img.youtube.com/vi/6QlAnqSiWvo/0.jpg)](https://youtu.be/6QlAnqSiWvo)
+[!["video"](http://img.youtube.com/vi/6QlAnqSiWvo/0.jpg)](https://youtu.be/6QlAnqSiWvo)
 
 #### Running this application in a container with Kubernetes on IBM Cloud
 
-[![](https://i.ytimg.com/vi/G-rESweRG84/0.jpg)](https://youtu.be/G-rESweRG84)
+[!["video"](https://i.ytimg.com/vi/G-rESweRG84/0.jpg)](https://youtu.be/G-rESweRG84)
 
 # Steps
 
@@ -63,8 +61,8 @@ Run in a container on IBM Cloud, using [these instructions](doc/source/Container
 
 1. [Clone the repo](#1-clone-the-repo)
 2. [Create IBM Cloud services](#2-create-ibm-cloud-services)
-3. [Get IBM Cloud credentials and add to .env](#3-get-ibm-cloud-services-credentials-and-add-to-env-file)
-4. [Configure Watson Assistant](#4-configure-watson-conversation)
+3. [Configure Watson Assistant](#3-configure-watson-assistant)
+4. [Get IBM Cloud credentials and add to .env](#4-get-ibm-cloud-services-credentials-and-add-to-env-file)
 5. [Run the application](#5-run-the-application)
 
 ### 1. Clone the repo
@@ -82,64 +80,51 @@ Create the following service and name it `wcsi-conversation-service`:
 
   * [**Watson Assistant**](https://console.ng.bluemix.net/catalog/services/conversation)
 
-### 3. Get IBM Cloud service credentials and add to .env file
+### 3. Configure Watson Assistant
 
-As you create the IBM Cloud services, you'll need to create service credentials. You might get either IAM or username/password based credentials based on the region.
+#### Import the Assistant workspace.json:
 
-First of all, move the `watson-conversation-slots-intro/env.sample` file to ``watson-conversation-slots-intro/.env``.
+* Find the Assistant service in your IBM Cloud Dashboard.
+* Click on the service and then click on `Launch tool`.
+* Go to the `Skills` tab.
+* Click `Create new`
+* Click the `Import skill` tab.
+* Click `Choose JSON file`, go to your cloned repo dir, and `Open` the workspace.json file in [`data/watson-pizzeria.json`](data/watson-pizzeria.json).
+* Select `Everything` and click `Import`.
 
-* If the service credentials from IBM Watson Assistant is username/password based as below populate the username, password and workspace_id and comment out the IAM credentials part.
+To find the `WORKSPACE_ID` for Watson Assistant:
 
-![](doc/source/images/WatsonCred1.png)
+* Go back to the `Skills` tab.
+* Find the card for the workspace you would like to use. Look for `WatsonPizzeria`.
+* Click on the three dots in the upper right-hand corner of the card and select `View API Details`.
+* Copy the `Workspace ID` GUID.
+
+!["Get Workspace ID"](https://github.com/IBM/pattern-utils/blob/master/watson-assistant/assistantPostSkillGetID.gif)
+
+* In the next step, you will put this `Workspace ID` into the `.env file as ``WORKSPACE_ID``.
+
+### 4. Get IBM Cloud services credentials and add to .env file
+
+* Move the `watson-conversation-slots-intro/env.sample` file to ``watson-conversation-slots-intro/.env``.
+
+* Use the `apikey` from your Watson Assistant service credentials in the `.env` file. Note that older services might still use username/password, so comment those out and use instead, if applicable.
+
+!["Assistant Credentials"](https://github.com/IBM/pattern-utils/blob/master/watson-assistant/watson_assistant_api_key.png)
+
+* Put the `Workspace ID` into the `.env file as ``WORKSPACE_ID``.
 
 
-```
+```bash
 WORKSPACE_ID=<put workspace id here>
-
-# Watson Assistant authentication using username/password authentication
-CONVERSATION_USERNAME=<put assistant username here>
-CONVERSATION_PASSWORD=<put assistant password here>
-
-# Watson Assistant Authentication using IAM
-#CONVERSATION_IAM_APIKEY=<put assistant IAM apikey here>
-#CONVERSATION_URL=<put assistant url here>
-```
-
-* If the service credentials from IBM Watson Assistant is IAM based as below, populate the IAM apikey, url, and workspace_id and comment out the username/password part
-
-![](https://github.com/IBM/pattern-images/raw/master/watson-assistant/watson_assistant_api_key.png)
-
-
-```
-WORKSPACE_ID=<put workspace id here>
-
-# Watson Assistant authentication using username/password authentication
-#CONVERSATION_USERNAME=<put assistant username here>
-#CONVERSATION_PASSWORD=<put assistant password here>
 
 # Watson Assistant Authentication using IAM
 CONVERSATION_IAM_APIKEY=<put assistant IAM apikey here>
 CONVERSATION_URL=<put assistant url here>
+
+# Deprecated: Watson Assistant authentication using username/password authentication
+#CONVERSATION_USERNAME=<put assistant username here>
+#CONVERSATION_PASSWORD=<put assistant password here>
 ```
-
-
-### 4. Configure Watson Assistant
-
-Launch the **Watson Assistant** tool. Use the `import` icon button on the right
-
-<p align="center">
-  <img width="50%" height="50%" src="doc/source/images/import_conversation_workspace.png">
-</p>
-
-Find the local version of [`data/watson-pizzeria.json`](data/watson-pizzeria.json) and select
-`Import`. Find the `Workspace ID` by clicking on the context menu of the new
-workspace and select `View details`.
-
-<p align="center">
-  <img src="doc/source/images/open_conversation_menu.png">
-</p>
-
-Put this `Workspace ID` into the `.env file as ``WORKSPACE_ID``.
 
 ### 5. Run the application
 
@@ -149,9 +134,9 @@ If you used ``Deploy to IBM Cloud``, the setup is automatic.
 
 #### If you decided to run the app locally...
 
-```
-$ npm install
-$ npm start
+```bash
+npm install
+npm start
 ```
 
 The application will be available in your browser at http://localhost:3000
@@ -160,64 +145,63 @@ The application will be available in your browser at http://localhost:3000
 
 The power of Slots is in how it reduces the number of nodes required to implement logic in your Watson Assistant Dialog. Here's a partial conversation Dialog using the old method:
 
-![](doc/source/images/pizzaOldWay.png)
+!["Pizza dialog old way"](doc/source/images/pizzaOldWay.png)
 
-And here's a more complete Dialog using slots, which puts all the logic in one Node!
+And here's a more complete Dialog using slots, which puts all the logic in the `Pizza ordering` Node.
 
-![](doc/source/images/pizzaNewWay.png)
+!["Pizza dialog new way"](doc/source/images/pizzaNewWay.png)
 
 Open up the Dialog, and we'll have a look:
 
-![](doc/source/images/pizzaDialogBegin.png)
+!["Pizza dialog begin"](doc/source/images/pizzaDialogBegin.png)
 
 Each slot represents a field to be populated in the chatbot: ``pizza_size``, ``pizza_type``, and ``pizza_topings``.
 If they are not present, the user will be prompted, starting at the top, until all are populated via
 the associated variable (``$pizza_size``, ``$pizza_type``, etc).
 
-Click on the Configure ![icon](doc/source/images/pizzaGearIcon.png) to add more functionality:
+Click on the Configure !["icon"](doc/source/images/pizzaGearIcon.png) to add more functionality:
 
-![](doc/source/images/pizzaConfig3pizza_toppingsTop.png)
+!["Pizza config 3 toppings"](doc/source/images/pizzaConfig3pizza_toppingsTop.png)
 
 Here, we can add a response for when this slot is filled (Found).
 Logic can be used for one ingredient:
 
-![](doc/source/images/pizzaConfig3Pizza_toppingsMid1ingredient.png)
+!["Pizza config 3 one topping"](doc/source/images/pizzaConfig3Pizza_toppingsMid1ingredient.png)
 
 or if there are greater than one ingredient added:
 
-![](doc/source/images/pizzaConfig3Pizza_toppingsMidBotGreater1.png)
+!["Pizza config 3 >1 topping"](doc/source/images/pizzaConfig3Pizza_toppingsMidBotGreater1.png)
 
 We've added logic to address yes or no answers to the question "Any extra toppings?":
 
-![](doc/source/images/pizzaConfig3NewNotFoundconfirm.png)
+!["Pizza config 3 confirm not found"](doc/source/images/pizzaConfig3NewNotFoundconfirm.png)
 
-Click on the 3 circles ![icon](doc/source/images/pizza3circles.png) to edit the json directly:
+Click on the 3 circles !["icon"](doc/source/images/pizza3circles.png) and choose `Open JSON editor` to edit the json directly:
 
-![](doc/source/images/pizzaConfig3NotFoundJson.png)
+!["Pizza config edit JSON"](doc/source/images/pizzaConfig3NotFoundJson.png)
 
 Here, we've set an empty value for the context: {"pizza_topings"} field, so that we can exit
 the loop by filling this slot.
 
 Finally, we add responses for once the slots are all filled:
 
-![](doc/source/images/pizzaOrderFinish1.png)
+!["Pizza order finish"](doc/source/images/pizzaOrderFinish1.png)
 
-We start with the case where we have "pizza_topings", by detecting that the
+We start with the case where we have "pizza_toppings", by detecting that the
 array has size>0.
 Here, we first handle the case where the optional "pizza_place" slot
 is filled, and then handle the case where it is not.
 
-![](doc/source/images/pizzaOrderFinish2.png)
+!["Pizza order finish no place"](doc/source/images/pizzaOrderFinish2.png)
 
-Finally, we add handlers for the cases where the users answers to a prompt
-is not found. We've handlers for the intents "help" and "reset":
+Finally, we add a handler for the case where the user's answers to a prompt
+is not found. We've added a handler for the intent "help".
 
-![](doc/source/images/pizzaHandleHelp.png)
+!["Pizza handle Help"](doc/source/images/pizzaHandleHelp.png)
 
-![](doc/source/images/pizzaHandlerReset.png)
+We have a dialog node to handle the intent `#reset` which will reset all fields to `null`:
 
-Note that we edit the json directly when we handle the Reset. We'll
-set all the fields to null in order to begin again.
+!["Pizza reset node"](doc/source/images/pizzaResetNode.png)
 
 # Assistant Example
 
