@@ -43,7 +43,7 @@
 
 ## IBM Cloud에 배포하기
 
-[![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/watson-conversation-slots-intro)
+[![Deploy to IBM Cloud](https://cloud.ibm.com/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/IBM/watson-conversation-slots-intro)
 
 ``Deploy to IBM Cloud``버튼을 클릭한 후, ``create``을 누르면 바로 5단계로 건너뛸 수 있습니다.
 
@@ -76,7 +76,7 @@ Assistant Intents, Entities, Dialog 노드를 업로드하기 위해 [`data/wats
 
 아래 서비스를 생성하고 이름을 `wcsi-conversation-service`로 설정합니다 :
 
-  * [**Watson Assistant**](https://console.ng.bluemix.net/catalog/services/conversation)
+  * [**Watson Assistant**](https://cloud.ibm.com/catalog/services/conversation)
 
 ### 3. IBM Cloud 서비스 신임정보를 받아서 .env 파일에 추가하기
 
@@ -245,7 +245,7 @@ Could not find service <Watson_service> to bind to <IBM_Cloud_application>``
 # 관련 링크
 
 * [유튜브 데모보기](https://youtu.be/6QlAnqSiWvo)
-* [IBM Watson Assistant Docs](https://console.bluemix.net/docs/services/conversation/dialog-build.html#dialog-build)
+* [IBM Watson Assistant Docs](https://cloud.ibm.com/docs/services/conversation/dialog-build.html#dialog-build)
 * [IBM Watson Assistant Slots 관련한 코드 패턴 블로그](https://developer.ibm.com/code/2017/09/19/managing-resources-efficiently-watson-conversation-slots/)
 
 # 더 알아보기

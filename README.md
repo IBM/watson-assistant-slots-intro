@@ -44,7 +44,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 ## Deploy to IBM Cloud
 
-[![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/watson-conversation-slots-intro)
+[![Deploy to IBM Cloud](https://cloud.ibm.com/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/IBM/watson-conversation-slots-intro)
 
 Click the ``Deploy to IBM Cloud`` button and hit ``Create`` and then jump to step 5.
 
@@ -78,7 +78,7 @@ the Assistant Intents, Entities, and Dialog Nodes.
 
 Create the following service and name it `wcsi-conversation-service`:
 
-  * [**Watson Assistant**](https://console.ng.bluemix.net/catalog/services/conversation)
+  * [**Watson Assistant**](https://cloud.ibm.com/catalog/services/conversation)
 
 ### 3. Configure Watson Assistant
 
@@ -265,7 +265,7 @@ This code pattern is licensed under the Apache Software License, Version 2.  Sep
 # Links
 
 * [Demo on youtube](https://youtu.be/6QlAnqSiWvo)
-* [IBM Watson Assistant Docs](https://console.bluemix.net/docs/services/conversation/dialog-build.html#dialog-build)
+* [IBM Watson Assistant Docs](https://cloud.ibm.com/docs/services/conversation/dialog-build.html#dialog-build)
 * [Blog for IBM Watson Assistant Slots Code Pattern](https://developer.ibm.com/code/2017/09/19/managing-resources-efficiently-watson-conversation-slots/)
 
 # Learn more

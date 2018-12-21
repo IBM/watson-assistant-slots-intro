@@ -44,7 +44,7 @@
 
 ## IBM Cloud へのデプロイ
 
-[![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/watson-conversation-slots-intro)
+[![Deploy to IBM Cloud](https://cloud.ibm.com/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/IBM/watson-conversation-slots-intro)
 
 ``Deploy to IBM Cloud`` ボタンをクリックして、``Create`` を実行して [ステップ5](#5-run-the-application) にジャンプ。
 
@@ -81,7 +81,7 @@ Assistant インテント、エンティティ、ダイアログ ノードをア
 
 以下のサービスを作成し、`wcsi-conversation-service` という名前にします:
 
-  * [**Watson Assistant**](https://console.ng.bluemix.net/catalog/services/conversation)
+  * [**Watson Assistant**](https://cloud.ibm.com/catalog/services/conversation)
 
 <a name="3-get-ibm-cloud-services-credentials-and-add-to-env-file"></a>
 ### 3. IBM Cloud サービスの資格情報を入手し、.env ファイルに記載する
@@ -267,7 +267,7 @@ Could not find service <Watson_service> to bind to <IBM_Cloud_application>``
 # リンク
 
 * [YouTube 上のデモ](https://youtu.be/6QlAnqSiWvo)
-* [IBM Watson Assistant ドキュメント](https://console.bluemix.net/docs/services/conversation/dialog-build.html#dialog-build)
+* [IBM Watson Assistant ドキュメント](https://cloud.ibm.com/docs/services/conversation/dialog-build.html#dialog-build)
 * [IBM Watson Assistant Slots コードパターンに関するブログ](https://developer.ibm.com/code/2017/09/19/managing-resources-efficiently-watson-conversation-slots/)
 
 # もっと詳しく知る

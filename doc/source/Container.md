@@ -36,7 +36,7 @@ export KUBECONFIG=/home/rak/.bluemix/plugins/container-service/clusters/Kate/kub
 
 ## Create the Watson Conversation Service and bind to your cluster
 
-Either follow the instructions to [Create a Conversation Service](https://console.ng.bluemix.net/catalog/services/conversation) or perform the following from the CLI.
+Either follow the instructions to [Create a Conversation Service](https://cloud.ibm.com/catalog/services/conversation) or perform the following from the CLI.
 
 * Create the Watson Conversation service:
 
@@ -64,7 +64,7 @@ $ bx cs cluster-service-bind <cluster-ID> default $CONVERSATION_SERVICE
 
 ## Load the Watson Conversation
 
-* Launch the [**Watson Conversation**](https://watson-conversation.ng.bluemix.net) tool. Use the **import** icon button on the right:
+* Launch the [**Watson Conversation**](https://assistant-us-south.watsonplatform.net) tool. Use the **import** icon button on the right:
 
 <p align="center">
   <img width="50%" height="50%" src="images/import_conversation_workspace.png">
