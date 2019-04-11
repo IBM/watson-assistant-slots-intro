@@ -3,13 +3,13 @@
 This directory allows you to deploy the `watson-conversation-slots-intro` application into a container running on IBM Cloud, using Kubernetes.
 
 The commands below use environment variables in order to define the specific details of the deployment. Either run the following to export the ENV variables, or substitute your names in the commands or exports:
-```
-$ export CLUSTER_NAME=Watson
-$ export CONVERSATION_SERVICE=conversation-service-watson-pizzeria
-$ export CONFIG_MAP=watson-pizzeria-config
-$ export POD_NAME=watson-pizzeria-pod.yml
-$ export KUBE_SERVICE=pizza-bot
-$ export CONTAINER_ENV_VARIABLE=service_watson_conversation
+```bash
+export CLUSTER_NAME=Watson
+export CONVERSATION_SERVICE=conversation-service-watson-pizzeria
+export CONFIG_MAP=watson-pizzeria-config
+export POD_NAME=watson-pizzeria-pod.yml
+export KUBE_SERVICE=pizza-bot
+export CONTAINER_ENV_VARIABLE=service_watson_conversation
 ```
 
 # Steps
@@ -18,19 +18,19 @@ $ export CONTAINER_ENV_VARIABLE=service_watson_conversation
 
 * Follow the instructions to [Create a Kubernetes Cluster](https://github.com/IBM/container-journey-template). If you already have a cluster, or choose a cluster name other than the one exported as $CLUSTER_NAME, re-export this new name:
 
-```
-$ export CLUSTER_NAME=<your_cluster_name>
+```bash
+export CLUSTER_NAME=<your_cluster_name>
 ```
 
 * Set the Kubernetes environment to work with your cluster:
 
-```
-bx cs cluster-config $CLUSTER_NAME
+```bash
+ibmcloud cs cluster-config $CLUSTER_NAME
 ```
 
 The output of this command will contain a KUBECONFIG environment variable that must be exported in order to set the context. Copy and paste the output in the terminal window. An example is:
 
-```
+```bash
 export KUBECONFIG=/home/rak/.bluemix/plugins/container-service/clusters/Kate/kube-config-prod-dal10-<cluster_name>.yml
 ```
 
@@ -40,26 +40,26 @@ Either follow the instructions to [Create a Conversation Service](https://consol
 
 * Create the Watson Conversation service:
 
-```
-$ bx service create conversation free $CONVERSATION_SERVICE
+```bash
+ibmcloud service create conversation free $CONVERSATION_SERVICE
 ```
 
 * Verify that the service instance is created:
 
-```
-$ bx service list
+```bash
+ibmcloud service list
 ```
 
 * Obtain the ID of your cluster:
 
-```
-$ bx cs clusters
+```bash
+ibmcloud cs clusters
 ```
 
 * Bind the service instance to your cluster:
 
-```
-$ bx cs cluster-service-bind <cluster-ID> default $CONVERSATION_SERVICE
+```bash
+ibmcloud cs cluster-service-bind <cluster-ID> default $CONVERSATION_SERVICE
 ```
 
 ## Load the Watson Conversation
@@ -80,45 +80,45 @@ workspace and select **View details**:
 
 export the workspace_id:
 
-```
-$ export WORKSPACE_ID=<WORKSPACE_ID>
+```bash
+export WORKSPACE_ID=<WORKSPACE_ID>
 ```
 
 ## Create a Kubernetes Configuration Map with the Workspace ID
 
 * Create a Kubernetes Configuration Map:
 
-```
-$ kubectl create configmap $CONFIG_MAP \
+```bash
+kubectl create configmap $CONFIG_MAP \
     --from-literal=workspace_id=$WORKSPACE_ID
 ```
 
 * Verify that the configuration is set:
 
-```
-$ kubectl get configmaps $CONFIG_MAP -o yaml
+```bash
+kubectl get configmaps $CONFIG_MAP -o yaml
 ```
 
 ## Deploy the Pod
 
 * Deploy:
 
-```
-$ kubectl create -f $POD_NAME
+```bash
+kubectl create -f $POD_NAME
 ```
 
 * Identify the **Public IP** address of your worker:
 
-```
-$ bx cs workers $CLUSTER_NAME
+```bash
+ibmcloud cs workers $CLUSTER_NAME
 ```
 
 * Identify the external port your pod is listening on:
 
 > Note: The Dockerfile determines the port that the container listens on using the `EXPOSE <port>` command. Kubernetes maps this to a publicly addressable port:
 
-```
-$ kubectl get services $KUBE_SERVICE
+```bash
+kubectl get services $KUBE_SERVICE
 ```
 
 * Access the application using `http://<IP Address>:<Port>`
@@ -155,7 +155,7 @@ The secret is mapped into the container as an environment variable through the K
 * Example usage is to have a script that is run when the container is started. We can then parse them from the  environment variable `$CONTAINER_ENV_VARIABLE` using jq:
 
 ```bash
-$ export CONVERSATION_USERNAME=$(echo "${CONVERSATION_ENV_VARIABLE}" |
+export CONVERSATION_USERNAME=$(echo "${CONVERSATION_ENV_VARIABLE}" |
                                   jq -r '.username')
 ```
 
@@ -166,8 +166,8 @@ You can see the defined secrets in the Kubernetes dashboard by running ``kubctl 
 If a pod doesn't start examine the logs:
 
 ```bash
-$ kubectl get pods
-$ kubectl logs <pod name>
+kubectl get pods
+kubectl logs <pod name>
 ```
 
 ### Cleanup
@@ -175,7 +175,7 @@ $ kubectl logs <pod name>
 To delete all your services and deployments, run:
 
 ```bash
-$ kubectl delete deployment <deployment_name>
-$ kubectl delete service $KUBE_SERVICE
+kubectl delete deployment <deployment_name>
+kubectl delete service $KUBE_SERVICE
 ```
 
