@@ -1,0 +1,54 @@
+---
+stages:
+- name: BUILD
+  inputs:
+  - type: git
+    branch: master
+    service: ${GIT_REPO}
+  triggers:
+  - type: commit
+  # properties:
+  # - name: ENV_KEY
+  #   value: ENV_VALUE
+  #   type: text
+  # - name: ENV_KEY
+  #   value: {ENV_VALUE_FROM_FORM}
+  #   type: text
+  jobs:
+  - name: Build Docker image
+    type: builder
+    build_type: cr
+    artifact_dir: output
+    target:
+      region_id: ${REGISTRY_REGION_ID}
+      api_key: ${API_KEY}
+    namespace: ${REGISTRY_NAMESPACE}
+    image_name: ${CF_APP_NAME}
+    script: |
+      #!/bin/bash
+      ./scripts/build.sh
+- name: DEPLOY
+  inputs:
+  - type: job
+    stage: BUILD
+    job: Build Docker image
+  triggers:
+  - type: stage
+  properties:
+  - name: buildprops
+    value: build.properties
+    type: file
+  - name: CLUSTER_NAMESPACE
+    value: ${PROD_CLUSTER_NAMESPACE}
+  - name: TWILIO_API_KEY
+    value: ${USER_INPUT_TWILIO_API_KEY}
+  jobs:
+  - name: Deploy to Kubernetes
+    type: deployer
+    target:
+      region_id: ${PROD_REGION_ID}
+      api_key: ${API_KEY}
+      kubernetes_cluster: ${PROD_CLUSTER_NAME}
+    script: |
+      #!/bin/bash
+      ./scripts/deploy.sh
