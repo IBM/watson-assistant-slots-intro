@@ -120,10 +120,6 @@ WORKSPACE_ID=<put workspace id here>
 # Watson Assistant Authentication using IAM
 CONVERSATION_IAM_APIKEY=<put assistant IAM apikey here>
 CONVERSATION_URL=<put assistant url here>
-
-# Deprecated: Watson Assistant authentication using username/password authentication
-#CONVERSATION_USERNAME=<put assistant username here>
-#CONVERSATION_PASSWORD=<put assistant password here>
 ```
 
 ### 5. Run the application
