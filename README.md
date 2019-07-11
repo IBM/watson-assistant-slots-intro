@@ -34,7 +34,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 #### Running this application with Cloud Foundry on IBM Cloud
 
-[!["video"](https://img.youtube.com/vi/6QlAnqSiWvo/0.jpg)](https://youtu.be/6QlAnqSiWvo)
+[![video](https://i.ytimg.com/vi/dTuJU8-FnNM/0.jpg)](https://youtu.be/dTuJU8-FnNM)
 
 #### Running this application in a container with Kubernetes on IBM Cloud
 
