@@ -85,9 +85,9 @@ Create the following service and name it `wcsi-conversation-service`:
 #### Import the Assistant workspace.json:
 
 * Find the Assistant service in your IBM Cloud Dashboard.
-* Click on the service and then click on `Launch tool`.
+* Click on the `Manage` tab and then click on `Launch Watson Assistant`.
 * Go to the `Skills` tab.
-* Click `Create new`
+* Click `Create skill`
 * Click the `Import skill` tab.
 * Click `Choose JSON file`, go to your cloned repo dir, and `Open` the workspace.json file in [`data/watson-pizzeria.json`](data/watson-pizzeria.json).
 * Select `Everything` and click `Import`.

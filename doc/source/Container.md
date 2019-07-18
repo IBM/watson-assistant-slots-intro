@@ -64,19 +64,28 @@ ibmcloud cs cluster-service-bind <cluster-ID> default $CONVERSATION_SERVICE
 
 ## Load the Watson Conversation
 
-* Launch the [**Watson Conversation**](https://watson-conversation.ng.bluemix.net) tool. Use the **import** icon button on the right:
+#### Import the Assistant workspace.json:
 
-<p align="center">
-  <img width="50%" height="50%" src="images/import_conversation_workspace.png">
-</p>
+* Find the Assistant service in your IBM Cloud Dashboard for `conversation-service-watson-pizzeria`.
+* Click the link for `Alias of <Watson Assitant-xx>`:
 
-* Find the local version of [`data/watson-pizzeria.json`](data/watson-pizzeria.json) and select
-**Import**. Find the **Workspace ID** by clicking on the context menu of the new
-workspace and select **View details**:
+![link alias](images/AssistantAlias.png)
 
-<p align="center">
-  <img src="images/open_conversation_menu.png">
-</p>
+* Click on the `Manage` tab and then click on `Launch Watson Assistant`.
+* Go to the `Skills` tab.
+* Click `Create skill`
+* Click the `Import skill` tab.
+* Click `Choose JSON file`, go to your cloned repo dir, and `Open` the workspace.json file in [`../../data/watson-pizzeria.json`](../../data/watson-pizzeria.json).
+* Select `Everything` and click `Import`.
+
+To find the `WORKSPACE_ID` for Watson Assistant:
+
+* Go back to the `Skills` tab.
+* Find the card for the workspace you would like to use. Look for `WatsonPizzeria`.
+* Click on the three dots in the upper right-hand corner of the card and select `View API Details`.
+* Copy the `Workspace ID` GUID.
+
+!["Get Workspace ID"](https://github.com/IBM/pattern-utils/blob/master/watson-assistant/assistantPostSkillGetID.gif)
 
 export the workspace_id:
 
