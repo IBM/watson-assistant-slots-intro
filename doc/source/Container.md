@@ -1,6 +1,6 @@
-# Running watson-conversation-slots-intro in a Container on IBM Cloud with Kubernetes
+# Running watson-assistant-slots-intro in a Container on IBM Cloud with Kubernetes
 
-This directory allows you to deploy the `watson-conversation-slots-intro` application into a container running on IBM Cloud, using Kubernetes.
+This directory allows you to deploy the `watson-assistant-slots-intro` application into a container running on IBM Cloud, using Kubernetes.
 
 The commands below use environment variables in order to define the specific details of the deployment. Either run the following to export the ENV variables, or substitute your names in the commands or exports:
 ```bash
@@ -36,12 +36,12 @@ export KUBECONFIG=/home/rak/.bluemix/plugins/container-service/clusters/Kate/kub
 
 ## Create the Watson Conversation Service and bind to your cluster
 
-Either follow the instructions to [Create a Conversation Service](https://console.ng.bluemix.net/catalog/services/conversation) or perform the following from the CLI.
+Either follow the instructions to [Create a Conversation Service](https://console.ng.bluemix.net/catalog/services/assistant) or perform the following from the CLI.
 
 * Create the Watson Conversation service:
 
 ```bash
-ibmcloud service create conversation free $CONVERSATION_SERVICE
+ibmcloud service create assistant free $CONVERSATION_SERVICE
 ```
 
 * Verify that the service instance is created:
@@ -137,13 +137,13 @@ kubectl get services $KUBE_SERVICE
 Now that you have created and bound a service instance to your cluster, let's take a deeper look at what is happening behind the scenes.
 
 
-* Binding the conversation service to your cluster creates a Kubernetes secret named `binding-${CONVERSATION_SERVICE}` .
+* Binding the assistant service to your cluster creates a Kubernetes secret named `binding-${CONVERSATION_SERVICE}` .
 
 * The secret contains a key named binding with its data being a JSON string of the form:
 
 ```json
 {
- "url":"https://gateway.watsonplatform.net/conversation/api",
+ "url":"https://gateway.watsonplatform.net/assistant/api",
  "username":"service-instance-user-uuid",
  "password":"service-instance-password"
 }
