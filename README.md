@@ -36,7 +36,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 |   |   |   |   |
 | - | - | - | - |
-| [![public](https://raw.githubusercontent.com/IBM/pattern-utils/master/images/public.png)](doc/source/one-click.md) | [![public](https://raw.githubusercontent.com/IBM/pattern-utils/master/images/public.png)](doc/source/iks.md) | [![openshift](https://raw.githubusercontent.com/IBM/pattern-utils/master/images/openshift.png)](doc/source/openshift.md) | [![local](https://raw.githubusercontent.com/IBM/pattern-utils/master/images/local.png)](doc/source/local.md) |
+| [![public](https://raw.githubusercontent.com/IBM/pattern-utils/master/images/cf.png)](doc/source/cf.md) | [![public](https://raw.githubusercontent.com/IBM/pattern-utils/master/images/iks.png)](doc/source/iks.md) | [![openshift](https://raw.githubusercontent.com/IBM/pattern-utils/master/images/openshift.png)](doc/source/openshift.md) | [![local](https://raw.githubusercontent.com/IBM/pattern-utils/master/images/local.png)](doc/source/local.md) |
 
 ## Assistant Slots Discussion
 
