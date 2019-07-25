@@ -32,7 +32,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 | - | - |
 | [![video](https://i.ytimg.com/vi/dTuJU8-FnNM/0.jpg)](https://youtu.be/dTuJU8-FnNM) | [!["video"](https://i.ytimg.com/vi/G-rESweRG84/0.jpg)](https://youtu.be/G-rESweRG84) |
 
-## Steps
+## Deployment options
 
 |   |   |   |   |
 | - | - | - | - |
