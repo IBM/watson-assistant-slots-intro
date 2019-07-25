@@ -1,13 +1,8 @@
 [![Build Status](https://api.travis-ci.org/IBM/watson-conversation-slots-intro.svg?branch=master)](https://travis-ci.org/IBM/watson-conversation-slots-intro)
 
-# Creating a Pizza ordering Chatbot using Watson Assistant Slots feature
+# Creating a pizza ordering chatbot using Watson Assistant slots feature
 
-*Read this in other languages: [한국어](README-ko.md), [日本語](README-ja.md)*
-
-In this Code Pattern, we will use the Watson Assistant Slots feature to
-build a chatbot that takes a pizza order. The needed information such as size, type,
-and ingredient choices can all be entered within one Assistant Node, unlike
-with previous versions of Assistant.
+In this Code Pattern, we will use the Watson Assistant Slots feature to build a chatbot that takes a pizza order. The needed information such as size, type, and ingredient choices can all be entered within one Assistant Node, unlike with previous versions of Assistant.
 
 When the reader has completed this Code Pattern, they will understand how to:
 
@@ -28,116 +23,22 @@ When the reader has completed this Code Pattern, they will understand how to:
 * [IBM Watson Assistant](https://www.ibm.com/cloud/watson-assistant/): Build, test and deploy a bot or virtual agent across mobile devices, messaging platforms, or even on a physical robot.
 
 ## Featured technologies
+
 * [Node.js](https://nodejs.org/): An asynchronous event driven JavaScript runtime, designed to build scalable applications.
 
-# Watch the Video
+## Watch the Video
 
-#### Running this application with Cloud Foundry on IBM Cloud
+| Using Cloud Foundry on IBM Cloud | Using IBM Cloud's Kubernetes service |
+| - | - |
+| [![video](https://i.ytimg.com/vi/dTuJU8-FnNM/0.jpg)](https://youtu.be/dTuJU8-FnNM) | [!["video"](https://i.ytimg.com/vi/G-rESweRG84/0.jpg)](https://youtu.be/G-rESweRG84) |
 
-[![video](https://i.ytimg.com/vi/dTuJU8-FnNM/0.jpg)](https://youtu.be/dTuJU8-FnNM)
+## Steps
 
-#### Running this application in a container with Kubernetes on IBM Cloud
+|   |   |   |   |
+| - | - | - | - |
+| [![public](https://raw.githubusercontent.com/IBM/pattern-utils/master/images/public.png)](doc/source/one-click.md) | [![public](https://raw.githubusercontent.com/IBM/pattern-utils/master/images/public.png)](doc/source/iks.md) | [![openshift](https://raw.githubusercontent.com/IBM/pattern-utils/master/images/openshift.png)](doc/source/openshift.md) | [![local](https://raw.githubusercontent.com/IBM/pattern-utils/master/images/local.png)](doc/source/local.md) |
 
-[!["video"](https://i.ytimg.com/vi/G-rESweRG84/0.jpg)](https://youtu.be/G-rESweRG84)
-
-# Steps
-
-## Deploy to IBM Cloud
-
-[![Deploy to IBM Cloud](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/IBM/watson-conversation-slots-intro)
-
-Click the ``Deploy to IBM Cloud`` button and hit ``Create`` and then jump to step 5.
-
-**OR**
-
-## Run in container
-
-Run in a container on IBM Cloud, using [these instructions](doc/source/Container.md).
-
- **OR**
-
-## Run locally
- Perform steps 1-5:
-
-1. [Clone the repo](#1-clone-the-repo)
-2. [Create IBM Cloud services](#2-create-ibm-cloud-services)
-3. [Configure Watson Assistant](#3-configure-watson-assistant)
-4. [Get IBM Cloud credentials and add to .env](#4-get-ibm-cloud-services-credentials-and-add-to-env-file)
-5. [Run the application](#5-run-the-application)
-
-### 1. Clone the repo
-
-Clone `watson-conversation-slots-intro` locally. In a terminal, run:
-
-  `$ git clone https://github.com/ibm/watson-conversation-slots-intro`
-
-We’ll be using the file [`data/watson-pizzeria.json`](data/watson-pizzeria.json) to upload
-the Assistant Intents, Entities, and Dialog Nodes.
-
-### 2. Create IBM Cloud services
-
-Create the following service and name it `wcsi-conversation-service`:
-
-  * [**Watson Assistant**](https://cloud.ibm.com/catalog/services/conversation)
-
-### 3. Configure Watson Assistant
-
-#### Import the Assistant workspace.json:
-
-* Find the Assistant service in your IBM Cloud Dashboard.
-* Click on the `Manage` tab and then click on `Launch Watson Assistant`.
-* Go to the `Skills` tab.
-* Click `Create skill`
-* Click the `Import skill` tab.
-* Click `Choose JSON file`, go to your cloned repo dir, and `Open` the workspace.json file in [`data/watson-pizzeria.json`](data/watson-pizzeria.json).
-* Select `Everything` and click `Import`.
-
-To find the `WORKSPACE_ID` for Watson Assistant:
-
-* Go back to the `Skills` tab.
-* Find the card for the workspace you would like to use. Look for `WatsonPizzeria`.
-* Click on the three dots in the upper right-hand corner of the card and select `View API Details`.
-* Copy the `Workspace ID` GUID.
-
-!["Get Workspace ID"](https://github.com/IBM/pattern-utils/blob/master/watson-assistant/assistantPostSkillGetID.gif)
-
-* In the next step, you will put this `Workspace ID` into the `.env file as ``WORKSPACE_ID``.
-
-### 4. Get IBM Cloud services credentials and add to .env file
-
-* Move the `watson-conversation-slots-intro/env.sample` file to ``watson-conversation-slots-intro/.env``.
-
-* Use the `apikey` from your Watson Assistant service credentials in the `.env` file. Note that older services might still use username/password, so comment those out and use instead, if applicable.
-
-!["Assistant Credentials"](https://github.com/IBM/pattern-utils/blob/master/watson-assistant/watson_assistant_api_key.png)
-
-* Put the `Workspace ID` into the `.env file as ``WORKSPACE_ID``.
-
-
-```bash
-WORKSPACE_ID=<put workspace id here>
-
-# Watson Assistant Authentication using IAM
-CONVERSATION_IAM_APIKEY=<put assistant IAM apikey here>
-CONVERSATION_URL=<put assistant url here>
-```
-
-### 5. Run the application
-
-#### If you used the Deploy to IBM Cloud button...
-
-If you used ``Deploy to IBM Cloud``, the setup is automatic.
-
-#### If you decided to run the app locally...
-
-```bash
-npm install
-npm start
-```
-
-The application will be available in your browser at http://localhost:3000
-
-# Assistant Slots Discussion
+## Assistant Slots Discussion
 
 The power of Slots is in how it reduces the number of nodes required to implement logic in your Watson Assistant Dialog. Here's a partial conversation Dialog using the old method:
 
@@ -199,7 +100,7 @@ We have a dialog node to handle the intent `#reset` which will reset all fields 
 
 !["Pizza reset node"](doc/source/images/pizzaResetNode.png)
 
-# Assistant Example
+## Assistant Example
 
 Let's look at an example conversation and the associated json.
 With your Watson Pizzeria running, start a dialog and begin with
@@ -233,8 +134,7 @@ Type reset to start again and test this by adding the phrase "to eat there...":
 
 ![](doc/source/images/pizzaEX5eatThere.png)
 
-
-# Troubleshooting
+## Troubleshooting
 
 * Deploy using Cloud Foundry `cf push` gives:
 
@@ -251,20 +151,19 @@ So, there are 2 ways you can get this to work:
 
 >NOTE: The `Deploy to IBM Cloud` button solves this issue by creating the services on the fly (with the correct names).
 
-
-# License
+## License
 
 This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
 [Apache Software License (ASL) FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
 
-# Links
+## Links
 
 * [Demo on youtube](https://youtu.be/6QlAnqSiWvo)
 * [IBM Watson Assistant Docs](https://cloud.ibm.com/docs/services/conversation/dialog-build.html#dialog-build)
 * [Blog for IBM Watson Assistant Slots Code Pattern](https://developer.ibm.com/code/2017/09/19/managing-resources-efficiently-watson-conversation-slots/)
 
-# Learn more
+## Learn more
 
 * **Artificial Intelligence Code Patterns**: Enjoyed this Code Pattern? Check out our other [AI Code Patterns](https://developer.ibm.com/technologies/artificial-intelligence/).
 * **AI and Data Code Pattern Playlist**: Bookmark our [playlist](https://www.youtube.com/playlist?list=PLzUbsvIyrNfknNewObx5N7uGZ5FKH0Fde) with all of our Code Pattern videos
