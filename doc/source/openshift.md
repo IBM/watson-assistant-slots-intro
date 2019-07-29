@@ -1,4 +1,4 @@
-# Running watson-assistant-slots-intro on RedHat OpenShift
+# Run on RedHat OpenShift
 
 This document shows how to run the `watson-assistant-slots-intro` application in a container running on RedHat OpenShift.
 
@@ -38,7 +38,7 @@ To find the `WORKSPACE_ID` for Watson Assistant:
 * Click on the three dots in the upper right-hand corner of the card and select `View API Details`.
 * Copy the `Workspace ID` GUID.
 
-!["Get Workspace ID"](https://github.com/IBM/pattern-utils/blob/master/watson-assistant/assistantPostSkillGetID.gif)
+!["Get Workspace ID"](https://raw.githubusercontent.com/IBM/pattern-utils/master/watson-assistant/assistantPostSkillGetID.gif)
 
 * Back in the OpenShift or OKD UI, click on the `Resources` tab and choose `Config Maps` and then `Create Config Map`.
 

@@ -1,8 +1,9 @@
-# Running watson-assistant-slots-intro in a Container on IBM Cloud with Kubernetes
+# Run in a container on IBM Cloud with Kubernetes
 
 This directory allows you to deploy the `watson-assistant-slots-intro` application into a container running on IBM Cloud, using Kubernetes.
 
 The commands below use environment variables in order to define the specific details of the deployment. Either run the following to export the ENV variables, or substitute your names in the commands or exports:
+
 ```bash
 export CLUSTER_NAME=Watson
 export CONVERSATION_SERVICE=conversation-service-watson-pizzeria
@@ -12,9 +13,9 @@ export KUBE_SERVICE=pizza-bot
 export CONTAINER_ENV_VARIABLE=service_watson_conversation
 ```
 
-# Steps
+## Steps
 
-## Create the Kubernetes cluster
+### Create the Kubernetes cluster
 
 * Follow the instructions to [Create a Kubernetes Cluster](https://github.com/IBM/container-journey-template). If you already have a cluster, or choose a cluster name other than the one exported as $CLUSTER_NAME, re-export this new name:
 
@@ -34,7 +35,7 @@ The output of this command will contain a KUBECONFIG environment variable that m
 export KUBECONFIG=/home/rak/.bluemix/plugins/container-service/clusters/Kate/kube-config-prod-dal10-<cluster_name>.yml
 ```
 
-## Create the Watson Conversation Service and bind to your cluster
+### Create the Watson Conversation Service and bind to your cluster
 
 Either follow the instructions to [Create a Conversation Service](https://console.ng.bluemix.net/catalog/services/assistant) or perform the following from the CLI.
 
@@ -62,7 +63,7 @@ ibmcloud cs clusters
 ibmcloud cs cluster-service-bind <cluster-ID> default $CONVERSATION_SERVICE
 ```
 
-## Load the Watson Conversation
+### Load the Watson Conversation
 
 #### Import the Assistant workspace.json:
 
@@ -85,7 +86,7 @@ To find the `WORKSPACE_ID` for Watson Assistant:
 * Click on the three dots in the upper right-hand corner of the card and select `View API Details`.
 * Copy the `Workspace ID` GUID.
 
-!["Get Workspace ID"](https://github.com/IBM/pattern-utils/blob/master/watson-assistant/assistantPostSkillGetID.gif)
+!["Get Workspace ID"](https://raw.githubusercontent.com/IBM/pattern-utils/master/watson-assistant/assistantPostSkillGetID.gif)
 
 export the workspace_id:
 
@@ -93,7 +94,7 @@ export the workspace_id:
 export WORKSPACE_ID=<WORKSPACE_ID>
 ```
 
-## Create a Kubernetes Configuration Map with the Workspace ID
+### Create a Kubernetes Configuration Map with the Workspace ID
 
 * Create a Kubernetes Configuration Map:
 
@@ -108,7 +109,7 @@ kubectl create configmap $CONFIG_MAP \
 kubectl get configmaps $CONFIG_MAP -o yaml
 ```
 
-## Deploy the Pod
+### Deploy the Pod
 
 * Deploy:
 
@@ -132,7 +133,7 @@ kubectl get services $KUBE_SERVICE
 
 * Access the application using `http://<IP Address>:<Port>`
 
-## Look Under the Hood
+### Look Under the Hood
 
 Now that you have created and bound a service instance to your cluster, let's take a deeper look at what is happening behind the scenes.
 
@@ -187,4 +188,3 @@ To delete all your services and deployments, run:
 kubectl delete deployment <deployment_name>
 kubectl delete service $KUBE_SERVICE
 ```
-
