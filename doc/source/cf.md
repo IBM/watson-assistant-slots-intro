@@ -11,7 +11,3 @@ This document shows how to run the `watson-assistant-slots-intro` application us
 </p>
 
 Click the ``Deploy to IBM Cloud`` button and hit ``Create`` on the next prompt. This will automatically create the services and application for you.
-
- and then jump to step 5.
-
-
