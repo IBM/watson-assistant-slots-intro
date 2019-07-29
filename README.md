@@ -34,7 +34,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 ## Deployment options
 
-*Click on one of the options below for instructions on deploying the app*
+Click on one of the options below for instructions on deploying the app.
 
 |   |   |   |   |
 | - | - | - | - |
