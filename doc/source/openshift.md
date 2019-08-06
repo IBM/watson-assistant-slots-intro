@@ -11,15 +11,15 @@ You will need a running OpenShift cluster, or OKD cluster. You can provision [Op
 * In your cluster, open your project or click on `+ Create Project` to create one.
 * In the `Overview` tab, click on `Browse Catalog`
 
-![Browse Catalog](images/OpenShift-browse-catalog.png)
+![Browse Catalog](https://github.com/IBM/pattern-utils/blob/master/openshift/openshift-browse-catalog.png)
 
 * Choose the `Node.js` app container and click `Next`.
 
-![Choose Node.js](images/OpenShift-choose-nodejs.png)
+![Choose Node.js](https://github.com/IBM/pattern-utils/blob/master/openshift/openshift-choose-nodejs.png)
 
 * Give your app a name and add `https://github.com/IBM/watson-assistant-slots-intro` for the github repo, then click `Create`.
 
-![Add github repo](images/OpenShift-add-github-repo.png)
+![Add github repo](https://github.com/IBM/pattern-utils/blob/master/openshift/openshift-add-github-repo.png)
 
 * You will need to export the key/value pairs from [env.sample](../../env.sample) as a config map. First, create an instance of [Watson Assistant](https://cloud.ibm.com/catalog/services/watson-assistant) and copy the `API key` [1] and then click `Launch Watson Assistant` [2].
 
@@ -44,13 +44,13 @@ To find the `WORKSPACE_ID` for Watson Assistant:
 
 * Add a key for `WORKSPACE_ID` and the value you copied for the Workspace ID. Click `Add item` to continue.
 
-![add Workspace ID](images/OpenShift-add-workspace-id.png)
+![add config map](https://github.com/IBM/pattern-utils/blob/master/openshift/openshift-generic-config-map.png)
 
 * Add keys for `ASSISTANT_IAM_APIKEY` using the value you copied earlier, and for `PORT` with the value `8080`.
 
-* Go to the `Applications` tab, choose `Deployments` and the `Environment` tab. Under `Environment From` `Config Map/Secret` choose the config map you just created. The app will re-deploy automatically, or click `Deploy` to re-deploy manually. To see the variables in the Config Map that will be exported in the app environment, click `View Details`.
+* Go to the `Applications` tab, choose `Deployments` and the `Environment` tab. Under `Environment From` `Config Map/Secret` choose the config map you just created [1]. Save the config [2]. The app will re-deploy automatically, or click `Deploy` to re-deploy manually [3]. To see the variables in the Config Map that will be exported in the app environment, click `View Details`.
 
-![add config map to app](images/OpenShift-add-config-map-to-app.png)
+![add config map to app](https://github.com/IBM/pattern-utils/blob/master/openshift/openshift-add-config-map-to-app.png)
 
 * Under `Applications` -> `Routes` you will see your app. Click on the `Hostname` to see your Pizza ordering chat bot in action.
 

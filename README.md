@@ -38,7 +38,7 @@ Click on one of the options below for instructions on deploying the app.
 
 |   |   |   |   |
 | - | - | - | - |
-| [![public](https://raw.githubusercontent.com/IBM/pattern-utils/master/images/cf.png)](doc/source/cf.md) | [![public](https://raw.githubusercontent.com/IBM/pattern-utils/master/images/iks.png)](doc/source/iks.md) | [![openshift](https://raw.githubusercontent.com/IBM/pattern-utils/master/images/openshift.png)](doc/source/openshift.md) | [![local](https://raw.githubusercontent.com/IBM/pattern-utils/master/images/local.png)](doc/source/local.md) |
+| [![public](https://raw.githubusercontent.com/IBM/pattern-utils/master/deploy-buttons/cf.png)](doc/source/cf.md) | [![public](https://raw.githubusercontent.com/IBM/pattern-utils/master/deploy-buttons/iks.png)](doc/source/iks.md) | [![openshift](https://raw.githubusercontent.com/IBM/pattern-utils/master/deploy-buttons/openshift.png)](doc/source/openshift.md) | [![local](https://raw.githubusercontent.com/IBM/pattern-utils/master/deploy-buttons/local.png)](doc/source/local.md) |
 
 ## Assistant Slots Discussion
 
