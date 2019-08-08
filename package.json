@@ -19,27 +19,28 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "dotenv": "^6.2.0",
-    "express": "^4.16.4",
-    "vcap_services": "^0.7.0",
-    "watson-developer-cloud": "^3.15.0"
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "ibm-watson": "^4.3.2",
+    "npm-check-updates": "^3.1.20",
+    "vcap_services": "^0.7.1"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^10.0.2",
     "casperjs": "^1.1.4",
-    "codecov": "^3.1.0",
-    "eslint": "^5.10.0",
-    "eslint-config-google": "^0.11.0",
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-plugin-node": "^8.0.0",
-    "eslint-plugin-prettier": "^3.0.0",
+    "codecov": "^3.5.0",
+    "eslint": "^6.1.0",
+    "eslint-config-google": "^0.13.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "extend": ">=3.0.2",
     "istanbul": "^0.4.5",
-    "mocha": "^5.2.0",
+    "mocha": "^6.2.0",
     "phantomjs-prebuilt": "^2.1.16",
-    "prettier": "^1.15.3",
-    "supertest": "^3.3.0"
+    "prettier": "^1.18.2",
+    "supertest": "^4.0.2"
   },
   "engines": {
     "node": ">= 6.9.x",
