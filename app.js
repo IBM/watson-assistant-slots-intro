@@ -16,12 +16,16 @@
 
 'use strict';
 
+require('dotenv').config({
+  silent: true
+});
+
 var WatsonConversationSetup = require('./lib/watson-conversation-setup');
 var DEFAULT_NAME = 'watson-conversation-slots-intro';
 var fs = require('fs'); // file system for loading JSON
 var vcapServices = require('vcap_services');
 var conversationCredentials = vcapServices.getCredentials('conversation');
-var watson = require('watson-developer-cloud'); // watson sdk
+var AssistantV1 = require('ibm-watson/assistant/v1');
 
 var express = require('express'); // app server
 var bodyParser = require('body-parser'); // parser for post requests
@@ -34,8 +38,18 @@ app.use(bodyParser.json());
 
 var workspaceID; // workspaceID will be set when the workspace is created or validated.
 
-const conversation = new watson.AssistantV1({ 
-  version: '2018-02-16'
+if (!process.env.ASSISTANT_IAM_APIKEY && !process.env.ASSISTANT_URL) {
+  console.log('Please supply ASSISTANT_IAM_APIKEY and ASSISTANT_URL in the environment');
+  process.exit();
+}
+
+var ASSISTANT_IAM_APIKEY = process.env.ASSISTANT_IAM_APIKEY;
+var ASSISTANT_URL = process.env.ASSISTANT_URL;
+
+const conversation = new AssistantV1({
+  iam_apikey: ASSISTANT_IAM_APIKEY,
+  url: ASSISTANT_URL,
+  version: '2019-08-06'
 });
 
 var conversationSetup = new WatsonConversationSetup(conversation);
