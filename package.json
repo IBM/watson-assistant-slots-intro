@@ -23,8 +23,7 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "ibm-watson": "^4.3.2",
-    "npm-check-updates": "^3.1.20",
-    "vcap_services": "^0.7.1"
+    "npm-check-updates": "^3.1.20"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.2",
