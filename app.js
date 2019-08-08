@@ -23,8 +23,6 @@ require('dotenv').config({
 var WatsonConversationSetup = require('./lib/watson-conversation-setup');
 var DEFAULT_NAME = 'watson-conversation-slots-intro';
 var fs = require('fs'); // file system for loading JSON
-var vcapServices = require('vcap_services');
-var conversationCredentials = vcapServices.getCredentials('conversation');
 var AssistantV1 = require('ibm-watson/assistant/v1');
 
 var express = require('express'); // app server
@@ -43,12 +41,7 @@ if (!process.env.ASSISTANT_IAM_APIKEY && !process.env.ASSISTANT_URL) {
   process.exit();
 }
 
-var ASSISTANT_IAM_APIKEY = process.env.ASSISTANT_IAM_APIKEY;
-var ASSISTANT_URL = process.env.ASSISTANT_URL;
-
 const conversation = new AssistantV1({
-  iam_apikey: ASSISTANT_IAM_APIKEY,
-  url: ASSISTANT_URL,
   version: '2019-08-06'
 });
 
