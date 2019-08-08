@@ -41,9 +41,6 @@ if (!process.env.ASSISTANT_IAM_APIKEY && !process.env.ASSISTANT_URL) {
   process.exit();
 }
 
-var ASSISTANT_IAM_APIKEY = process.env.ASSISTANT_IAM_APIKEY;
-var ASSISTANT_URL = process.env.ASSISTANT_URL;
-
 const conversation = new AssistantV1({
   version: '2019-08-06'
 });
