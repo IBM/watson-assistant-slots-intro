@@ -188,3 +188,5 @@ To delete all your services and deployments, run:
 kubectl delete deployment <deployment_name>
 kubectl delete service $KUBE_SERVICE
 ```
+
+[![return](https://raw.githubusercontent.com/IBM/pattern-utils/master/deploy-buttons/return.png)](https://github.com/IBM/watson-assistant-slots-intro#deployment-options)

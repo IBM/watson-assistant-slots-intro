@@ -55,3 +55,5 @@ To find the `WORKSPACE_ID` for Watson Assistant:
 * Under `Applications` -> `Routes` you will see your app. Click on the `Hostname` to see your Pizza ordering chat bot in action.
 
 ![pizza bot demo](images/pizza-bot-demo.png)
+
+[![return](https://raw.githubusercontent.com/IBM/pattern-utils/master/deploy-buttons/return.png)](https://github.com/IBM/watson-assistant-slots-intro#deployment-options)

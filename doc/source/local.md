@@ -80,3 +80,5 @@ npm start
 ```
 
 The application will be available in your browser at http://localhost:3000
+
+[![return](https://raw.githubusercontent.com/IBM/pattern-utils/master/deploy-buttons/return.png)](https://github.com/IBM/watson-assistant-slots-intro#deployment-options)
