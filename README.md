@@ -1,4 +1,4 @@
-[![Build Status](https://api.travis-ci.org/IBM/watson-conversation-slots-intro.svg?branch=master)](https://travis-ci.org/IBM/watson-conversation-slots-intro)
+[![Build Status](https://travis-ci.com/IBM/watson-assistant-slots-intro.svg?branch=master)](https://travis-ci.com/IBM/watson-assistant-slots-intro)
 
 # Creating a pizza ordering chatbot using Watson Assistant slots feature
 
