@@ -36,11 +36,6 @@ app.use(bodyParser.json());
 
 var workspaceID; // workspaceID will be set when the workspace is created or validated.
 
-if (!process.env.ASSISTANT_IAM_APIKEY && !process.env.ASSISTANT_URL) {
-  console.log('Please supply ASSISTANT_IAM_APIKEY and ASSISTANT_URL in the environment');
-  process.exit();
-}
-
 const conversation = new AssistantV1({
   version: '2019-08-06'
 });
