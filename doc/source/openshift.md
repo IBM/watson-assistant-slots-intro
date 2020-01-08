@@ -28,7 +28,7 @@ You will need a running OpenShift cluster, or OKD cluster. You can provision [Op
 * Go to the `Skills` tab.
 * Click `Create skill`
 * Click the `Import skill` tab.
-* Click `Choose JSON file`, go to your cloned repo dir, and `Open` the workspace.json file in [`../../data/watson-pizzeria.json`](../../data/watson-pizzeria.json).
+* Click `Choose JSON file`, go to your cloned repo dir, and `Open` the workspace.json file in [`data/watson-pizzeria.json`](../../data/watson-pizzeria.json).
 * Select `Everything` and click `Import`.
 
 To find the `WORKSPACE_ID` for Watson Assistant:
