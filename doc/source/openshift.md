@@ -104,12 +104,12 @@ The remaining credentials to add will depend on if you provisioned Assistant fro
 
 * Additionally, you will need to add the following keys and values:
 
-    `CONVERSATION_AUTH_TYPE` and set value to `cp4d`
-    `CONVERSATION_AUTH_URL` and set value to the URL of your CPD cluster
-    `CONVERSATION_AUTH_DISABLE_SSL` and set value to `true`
-    `CONVERSATION_USERNAME` and set value to the CPD cluser username
-    `CONVERSATION_PASSWORD` and set value to the CPD cluser password
-    `CONVERSATION_DISABLE_SSL` and set value to `true`
+  * `CONVERSATION_AUTH_TYPE` and set value to `cp4d`
+  * `CONVERSATION_AUTH_URL` and set value to the URL of your CPD cluster
+  * `CONVERSATION_AUTH_DISABLE_SSL` and set value to `true`
+  * `CONVERSATION_USERNAME` and set value to the CPD cluser username
+  * `CONVERSATION_PASSWORD` and set value to the CPD cluser password
+  * `CONVERSATION_DISABLE_SSL` and set value to `true`
 
 </p>
 </details>
