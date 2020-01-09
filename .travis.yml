@@ -2,7 +2,7 @@ language: node_js
 dist: trusty
 node_js: 10
 script:
-- npm test
+- npm run lint
 cache:
   directories:
   - node_modules

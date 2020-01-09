@@ -39,7 +39,7 @@ var workspaceID; // workspaceID will be set when the workspace is created or val
 
 // Authentication relies on env settings
 const auth = getAuthenticatorFromEnvironment('CONVERSATION');
-console.log("auth:", auth);
+console.log('auth:', auth);
 
 const conversation = new AssistantV1({
   version: '2019-12-28',
