@@ -8,6 +8,8 @@ You will need a running OpenShift cluster, or OKD cluster. You can provision [Op
 
 ## Steps
 
+### Create the application deployment
+
 * In your cluster, open your project or click on `+ Create Project` to create one.
 * In the `Overview` tab, click on `Browse Catalog`
 
@@ -21,15 +23,40 @@ You will need a running OpenShift cluster, or OKD cluster. You can provision [Op
 
 ![Add github repo](https://github.com/IBM/pattern-utils/blob/master/openshift/openshift-add-github-repo.png)
 
-* You will need to export the key/value pairs from [env.sample](../../env.sample) as a config map. First, create an instance of [Watson Assistant](https://cloud.ibm.com/catalog/services/watson-assistant) and copy the `API key` [1] and then click `Launch Watson Assistant` [2].
+### Configure Watson Assistant
 
-![Copy API key](images/copy-api-key.png)
+The following instructions will depend on if you are provisioning Assistant from IBM Cloud or from an IBM Cloud Pak for Data cluster. Choose one:
 
+<details><summary>Provision on IBM Cloud</summary>
+<p>
+
+* Find the Assistant service in your IBM Cloud Dashboard.
+* Click on the `Manage` tab and then click on `Launch Watson Assistant`.
 * Go to the `Skills` tab.
 * Click `Create skill`
+* Select the `Dialog sill` option and then click `Next`.
 * Click the `Import skill` tab.
 * Click `Choose JSON file`, go to your cloned repo dir, and `Open` the workspace.json file in [`data/watson-pizzeria.json`](../../data/watson-pizzeria.json).
 * Select `Everything` and click `Import`.
+
+</p>
+</details>
+
+<details><summary>Provision on IBM CPD</summary>
+<p>
+
+* Find the Assistant service in your list of `Provisioned Instances` in your IBM CPD Dashboard.
+* Click on `View Details` from the options menu associated with your Assistant service.
+* Click on `Open Watson Assistant`.
+* Go to the `Skills` tab.
+* Click `Create skill`
+* Select the `Dialog sill` option and then click `Next`.
+* Click the `Import skill` tab.
+* Click `Choose JSON file`, go to your cloned repo dir, and `Open` the workspace.json file in [`data/watson-pizzeria.json`](../../data/watson-pizzeria.json).
+* Select `Everything` and click `Import`.
+
+</p>
+</details>
 
 To find the `WORKSPACE_ID` for Watson Assistant:
 
@@ -40,17 +67,60 @@ To find the `WORKSPACE_ID` for Watson Assistant:
 
 !["Get Workspace ID"](https://raw.githubusercontent.com/IBM/pattern-utils/master/watson-assistant/assistantPostSkillGetID.gif)
 
+* In the next step, you will need to aadd this `Workspace ID` to your application config map.
+
+### Create config map to store Watson Assistant credentials
+
 * Back in the OpenShift or OKD UI, click on the `Resources` tab and choose `Config Maps` and then `Create Config Map`.
 
 * Add a key for `WORKSPACE_ID` and the value you copied for the Workspace ID. Click `Add item` to continue.
 
+* Add a key for `PORT` with the value `8080`.
+
 ![add config map](https://github.com/IBM/pattern-utils/blob/master/openshift/openshift-generic-config-map.png)
 
-* Add keys for `ASSISTANT_IAM_APIKEY` using the value you copied earlier, and for `PORT` with the value `8080`.
+The remaining credentials to add will depend on if you provisioned Assistant from IBM Cloud or from an IBM Cloud Pak for Data cluster. Choose one:
+
+<details><summary>Provision on IBM Cloud</summary>
+<p>
+
+* Retrieve the `apikey` and `url` from your Watson Assistant service credentials:
+
+!["Assistant Credentials"](https://raw.githubusercontent.com/IBM/pattern-utils/master/watson-assistant/watson_assistant_api_key.png)
+
+* Add keys for `CONVERSATION_IAM_APIKEY` and `CONVERSATION_URL` to store your credentials.
+
+</p>
+</details>
+
+<details><summary>Provision on IBM CPD</summary>
+<p>
+
+* Retreive the `URL` from your Watson Assistant service details panel:
+
+!["CPD Credentials"](images/cpd-assistant-details.png)
+
+* Add the key `CONVERSATION_URL` to store this value.
+
+* Additionally, you will need to add the following keys and values:
+
+    `CONVERSATION_AUTH_TYPE` and set value to `cp4d`
+    `CONVERSATION_AUTH_URL` and set value to the URL of your CPD cluster
+    `CONVERSATION_AUTH_DISABLE_SSL` and set value to `true`
+    `CONVERSATION_USERNAME` and set value to the CPD cluser username
+    `CONVERSATION_PASSWORD` and set value to the CPD cluser password
+    `CONVERSATION_DISABLE_SSL` and set value to `true`
+
+</p>
+</details>
+
+### Bind Watson Assistant service to your application
 
 * Go to the `Applications` tab, choose `Deployments` and the `Environment` tab. Under `Environment From` `Config Map/Secret` choose the config map you just created [1]. Save the config [2]. The app will re-deploy automatically, or click `Deploy` to re-deploy manually [3]. To see the variables in the Config Map that will be exported in the app environment, click `View Details`.
 
 ![add config map to app](https://github.com/IBM/pattern-utils/blob/master/openshift/openshift-add-config-map-to-app.png)
+
+### Run the application
 
 * Under `Applications` -> `Routes` you will see your app. Click on the `Hostname` to see your Pizza ordering chat bot in action.
 

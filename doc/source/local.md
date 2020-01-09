@@ -53,7 +53,6 @@ The following instructions will depend on if you are provisioning Assistant from
 * Click on `View Details` from the options menu associated with your Assistant service.
 * Click on `Open Watson Assistant`.
 * Go to the `Skills` tab.
-* Go to the `Skills` tab.
 * Click `Create skill`
 * Select the `Dialog sill` option and then click `Next`.
 * Click the `Import skill` tab.
@@ -124,7 +123,6 @@ CONVERSATION_DISABLE_SSL=true
 
 </p>
 </details>
-
 
 ### 5. Run the application
 
