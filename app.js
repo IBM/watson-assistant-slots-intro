@@ -24,6 +24,7 @@ var WatsonConversationSetup = require('./lib/watson-conversation-setup');
 var DEFAULT_NAME = 'watson-conversation-slots-intro';
 var fs = require('fs'); // file system for loading JSON
 var AssistantV1 = require('ibm-watson/assistant/v1');
+const { getAuthenticatorFromEnvironment } = require('ibm-watson/auth');
 
 var express = require('express'); // app server
 var bodyParser = require('body-parser'); // parser for post requests
@@ -36,8 +37,13 @@ app.use(bodyParser.json());
 
 var workspaceID; // workspaceID will be set when the workspace is created or validated.
 
+// Authentication relies on env settings
+const auth = getAuthenticatorFromEnvironment('CONVERSATION');
+console.log('auth:', auth);
+
 const conversation = new AssistantV1({
-  version: '2019-08-06'
+  version: '2019-12-28',
+  authenticator: auth
 });
 
 var conversationSetup = new WatsonConversationSetup(conversation);
@@ -64,11 +70,10 @@ app.post('/api/message', function(req, res) {
   }
 
   var payload = {
-    workspace_id: workspaceID,
+    workspaceId: workspaceID,
     context: req.body.context || {},
     input: req.body.input || {}
   };
-
   // Send the input to the conversation service
   conversation.message(payload, function(err, data) {
     if (err) {
@@ -86,13 +91,14 @@ app.post('/api/message', function(req, res) {
  */
 function updateMessage(input, response) {
   var responseText = null;
-  if (!response.output) {
-    response.output = {};
+  var result = response.result;
+  if (!result.output) {
+    result.output = {};
   } else {
-    return response;
+    return result;
   }
-  if (response.intents && response.intents[0]) {
-    var intent = response.intents[0];
+  if (result.intents && result.intents[0]) {
+    var intent = result.intents[0];
     // Depending on the confidence of the response the app can return different messages.
     // The confidence will vary depending on how well the system is trained. The service will always try to assign
     // a class/intent to the input. If the confidence is low, then it suggests the service is unsure of the
@@ -106,8 +112,8 @@ function updateMessage(input, response) {
       responseText = 'I did not understand your intent';
     }
   }
-  response.output.text = responseText;
-  return response;
+  result.output.text = responseText;
+  return result;
 }
 
 module.exports = app;
