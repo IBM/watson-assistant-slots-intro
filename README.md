@@ -20,7 +20,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 1. User sends messages to the application (running locally or on IBM Cloud).
 2. The application sends the user message to IBM Watson Assistant service, and displays the ongoing chat in a web page.
-3. Watson Assistant uses the Slots feature to fill out the required fields for a pizza order, and sends requests for additional information back to the running application. Watson Aassistant can be provisioned on either IBM Cloud or IBM Cloud Pak for Data.
+3. Watson Assistant uses the Slots feature to fill out the required fields for a pizza order, and sends requests for additional information back to the running application. Watson Assistant can be provisioned on either IBM Cloud or IBM Cloud Pak for Data.
 
 ## Included Components
 
