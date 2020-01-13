@@ -42,10 +42,10 @@ The following instructions will depend on if you are provisioning Assistant from
 </p>
 </details>
 
-<details><summary>Provision on IBM CPD</summary>
+<details><summary>Provision on IBM Cloud Pak for Data</summary>
 <p>
 
-* Find the Assistant service in your list of `Provisioned Instances` in your IBM CPD Dashboard.
+* Find the Assistant service in your list of `Provisioned Instances` in your IBM Cloud Pak for Data Dashboard.
 * Click on `View Details` from the options menu associated with your Assistant service.
 * Click on `Open Watson Assistant`.
 * Go to the `Skills` tab.
@@ -93,7 +93,7 @@ The remaining credentials to add will depend on if you provisioned Assistant fro
 </p>
 </details>
 
-<details><summary>Provision on IBM CPD</summary>
+<details><summary>Provision on IBM Cloud Pak for Data</summary>
 <p>
 
 * Retreive the `URL` from your Watson Assistant service details panel:
@@ -105,10 +105,10 @@ The remaining credentials to add will depend on if you provisioned Assistant fro
 * Additionally, you will need to add the following keys and values:
 
   * `CONVERSATION_AUTH_TYPE` and set value to `cp4d`
-  * `CONVERSATION_AUTH_URL` and set value to the URL of your CPD cluster
+  * `CONVERSATION_AUTH_URL` and set value to the URL of your IBM Cloud Pak for Data cluster
   * `CONVERSATION_AUTH_DISABLE_SSL` and set value to `true`
-  * `CONVERSATION_USERNAME` and set value to the CPD cluser username
-  * `CONVERSATION_PASSWORD` and set value to the CPD cluser password
+  * `CONVERSATION_USERNAME` and set value to the IBM Cloud Pak for Data cluser username
+  * `CONVERSATION_PASSWORD` and set value to the IBM Cloud Pak for Data cluser password
   * `CONVERSATION_DISABLE_SSL` and set value to `true`
 
 </p>

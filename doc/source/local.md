@@ -46,10 +46,10 @@ The following instructions will depend on if you are provisioning Assistant from
 </p>
 </details>
 
-<details><summary>Provision on IBM CPD</summary>
+<details><summary>Provision on IBM Cloud Pak for Data</summary>
 <p>
 
-* Find the Assistant service in your list of `Provisioned Instances` in your IBM CPD Dashboard.
+* Find the Assistant service in your list of `Provisioned Instances` in your IBM Cloud Pak for Data Dashboard.
 * Click on `View Details` from the options menu associated with your Assistant service.
 * Click on `Open Watson Assistant`.
 * Go to the `Skills` tab.
@@ -101,7 +101,7 @@ CONVERSATION_URL=<put assistant url here>
 </p>
 </details>
 
-<details><summary>Provision on IBM CPD</summary>
+<details><summary>Provision on IBM Cloud Pak for Data</summary>
 <p>
 
 * Use the `URL` from your Watson Assistant service details to set the `CONVERSATION_URL` value in the `.env` file.
@@ -119,7 +119,7 @@ CONVERSATION_URL=<put assistant url here>
 CONVERSATION_DISABLE_SSL=true
 ```
 
-`CONVERSATION_AUTH_URL`, `CONVERSATION_USERNAME` and `CONVERSATION_PASSWORD` are related to the URL and login credentials for accessing your CPD cluster.
+`CONVERSATION_AUTH_URL`, `CONVERSATION_USERNAME` and `CONVERSATION_PASSWORD` are related to the URL and login credentials for accessing your IBM Cloud Pak for Data cluster.
 
 </p>
 </details>
