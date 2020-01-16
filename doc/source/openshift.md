@@ -34,7 +34,7 @@ The following instructions will depend on if you are provisioning Assistant from
 * Click on the `Manage` tab and then click on `Launch Watson Assistant`.
 * Go to the `Skills` tab.
 * Click `Create skill`
-* Select the `Dialog sill` option and then click `Next`.
+* Select the `Dialog skill` option and then click `Next`.
 * Click the `Import skill` tab.
 * Click `Choose JSON file`, go to your cloned repo dir, and `Open` the workspace.json file in [`data/watson-pizzeria.json`](../../data/watson-pizzeria.json).
 * Select `Everything` and click `Import`.
@@ -50,7 +50,7 @@ The following instructions will depend on if you are provisioning Assistant from
 * Click on `Open Watson Assistant`.
 * Go to the `Skills` tab.
 * Click `Create skill`
-* Select the `Dialog sill` option and then click `Next`.
+* Select the `Dialog skill` option and then click `Next`.
 * Click the `Import skill` tab.
 * Click `Choose JSON file`, go to your cloned repo dir, and `Open` the workspace.json file in [`data/watson-pizzeria.json`](../../data/watson-pizzeria.json).
 * Select `Everything` and click `Import`.
