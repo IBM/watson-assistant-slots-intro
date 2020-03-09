@@ -94,7 +94,7 @@ The remaining credentials will depend on if you are provisioning Assistant from 
 
 ```bash
 # If Assistant service is hosted on IBM Cloud, uncomment and use these variables for IAM Authentication
-CONVERSATION_IAM_APIKEY=<put assistant IAM apikey here>
+CONVERSATION_APIKEY=<put assistant IAM apikey here>
 CONVERSATION_URL=<put assistant url here>
 ```
 
