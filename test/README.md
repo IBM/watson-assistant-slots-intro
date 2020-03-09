@@ -17,15 +17,6 @@ With travis installed via
  encrypt with:
 
 `travis encrypt WORKSPACE_ID=<your_ID>`
-
-For Username and password based credentials:
-
-`travis encrypt CONVERSATION_USERNAME=<your_user>`
-
-`travis encrypt CONVERSATION_PASSWORD=<your_passwd>`
-
-for IAM key based credentials:
-
 `travis encrypt CONVERSATION_APIKEY=<your_IAM_key>`
 
 
