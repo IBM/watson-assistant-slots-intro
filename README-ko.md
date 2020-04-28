@@ -96,7 +96,7 @@ CONVERSATION_USERNAME=<put assistant username here>
 CONVERSATION_PASSWORD=<put assistant password here>
 
 # Watson Assistant Authentication using IAM
-#CONVERSATION_IAM_APIKEY=<put assistant IAM apikey here>
+#CONVERSATION_APIKEY=<put assistant IAM apikey here>
 #CONVERSATION_URL=<put assistant url here>
 ```
 * IBM Watson Assistant의 서비스 신임정보가 아래와 같이 IAM 기반일 경우, IAM apikey, url, workspace_id를 입력하고 사용자 이름/패스워드 부분을 주석처리 합니다.
@@ -109,7 +109,7 @@ WORKSPACE_ID=<put workspace id here>
 #CONVERSATION_PASSWORD=<put assistant password here>
 
 # Watson Assistant Authentication using IAM
-CONVERSATION_IAM_APIKEY=<put assistant IAM apikey here>
+CONVERSATION_APIKEY=<put assistant IAM apikey here>
 CONVERSATION_URL=<put assistant url here>
 ```
 

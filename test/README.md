@@ -17,16 +17,7 @@ With travis installed via
  encrypt with:
 
 `travis encrypt WORKSPACE_ID=<your_ID>`
-
-For Username and password based credentials:
-
-`travis encrypt ASSISTANT_USERNAME=<your_user>`
-
-`travis encrypt ASSISTANT_PASSWORD=<your_passwd>`
-
-for IAM key based credentials:
-
-`travis encrypt ASSISTANT_IAM_APIKEY=<your_IAM_key>`
+`travis encrypt CONVERSATION_APIKEY=<your_IAM_key>`
 
 
 >Note that using `--add .travis.yml` can lead to extra input that may cause problems. For best results, add the encryted credentials to the file manually. It should look similar to this:
