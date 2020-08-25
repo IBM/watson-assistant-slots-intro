@@ -42,12 +42,18 @@ const auth = getAuthenticatorFromEnvironment('CONVERSATION');
 console.log('auth:', auth);
 
 const conversation = new AssistantV1({
-  version: '2019-12-28',
+  version: '2020-08-24',
   authenticator: auth
 });
 
 var conversationSetup = new WatsonConversationSetup(conversation);
+
+// handle issue with proper syntax of json file
+// Assistant tooling for export uses 'dialog_nodes', but SDK requires 'dialogNodes'
 var workspaceJson = JSON.parse(fs.readFileSync('data/watson-pizzeria.json'));
+if ('dialog_nodes' in workspaceJson && !('dialogNodes' in workspaceJson)) {
+  workspaceJson.dialogNodes = workspaceJson.dialog_nodes;
+}
 var conversationSetupParams = { default_name: DEFAULT_NAME, workspace_json: workspaceJson };
 conversationSetup.setupConversationWorkspace(conversationSetupParams, (err, data) => {
   if (err) {

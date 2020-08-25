@@ -13,4 +13,5 @@ applications:
   - wcsi-conversation-service
   env:
     NPM_CONFIG_PRODUCTION: false
-  buildpack: sdk-for-nodejs
+  buildpacks:
+    - sdk-for-nodejs
