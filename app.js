@@ -55,7 +55,6 @@ try {
   });
 
   var conversationSetup = new WatsonConversationSetup(conversation);
-  console.log('conversationSetup: ' + conversationSetup);
 
   // handle issue with proper syntax of json file
   // Assistant tooling for export uses 'dialog_nodes', but SDK requires 'dialogNodes'
