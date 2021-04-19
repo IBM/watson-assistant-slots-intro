@@ -48,7 +48,6 @@ let conversation;
 
 try {
   auth = getAuthenticatorFromEnvironment('CONVERSATION');
-  console.log('auth:', auth);
 
   conversation = new AssistantV1({
     version: '2021-04-15',
