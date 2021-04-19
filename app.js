@@ -37,37 +37,64 @@ app.use(bodyParser.json());
 
 var workspaceID; // workspaceID will be set when the workspace is created or validated.
 
+// Set to false if you want the app to not immediately fail.
+// App will come up and ask user to provide proper Watson Assistant credentials.
+const failOnMissingCredentials = true;
+
 // Authentication relies on env settings
-const auth = getAuthenticatorFromEnvironment('CONVERSATION');
-console.log('auth:', auth);
+let auth;
+let initError = false;
+let conversation;
 
-const conversation = new AssistantV1({
-  version: '2020-08-24',
-  authenticator: auth
-});
+try {
+  auth = getAuthenticatorFromEnvironment('CONVERSATION');
+  console.log('auth:', auth);
 
-var conversationSetup = new WatsonConversationSetup(conversation);
+  conversation = new AssistantV1({
+    version: '2021-04-15',
+    authenticator: auth
+  });
 
-// handle issue with proper syntax of json file
-// Assistant tooling for export uses 'dialog_nodes', but SDK requires 'dialogNodes'
-var workspaceJson = JSON.parse(fs.readFileSync('data/watson-pizzeria.json'));
-if ('dialog_nodes' in workspaceJson && !('dialogNodes' in workspaceJson)) {
-  workspaceJson.dialogNodes = workspaceJson.dialog_nodes;
-}
-var conversationSetupParams = { default_name: DEFAULT_NAME, workspace_json: workspaceJson };
-conversationSetup.setupConversationWorkspace(conversationSetupParams, (err, data) => {
-  if (err) {
-    //handleSetupError(err);
-  } else {
-    console.log('Assistant is ready!');
-    workspaceID = data;
+  var conversationSetup = new WatsonConversationSetup(conversation);
+  console.log('conversationSetup: ' + conversationSetup);
+
+  // handle issue with proper syntax of json file
+  // Assistant tooling for export uses 'dialog_nodes', but SDK requires 'dialogNodes'
+  var workspaceJson = JSON.parse(fs.readFileSync('data/watson-pizzeria.json'));
+  if ('dialog_nodes' in workspaceJson && !('dialogNodes' in workspaceJson)) {
+    workspaceJson.dialogNodes = workspaceJson.dialog_nodes;
   }
-});
+  var conversationSetupParams = { default_name: DEFAULT_NAME, workspace_json: workspaceJson };
+  conversationSetup.setupConversationWorkspace(conversationSetupParams, (err, data) => {
+    if (err) {
+      //handleSetupError(err);
+      console.log('Setup Error: ' + err);
+    } else {
+      console.log('Assistant is ready!');
+      workspaceID = data;
+    }
+  });
+} catch (e) {
+  console.log('Assistant initialization error: ' + e);
+  if (failOnMissingCredentials) {
+    throw(e);
+  } else {
+    console.log('Will continue with limited functionality');
+    initError = true;
+  }
+}
 
 // Endpoint to be call from the client side
 app.post('/api/message', function(req, res) {
 
-  if (!workspaceID) {
+  if (initError) {
+    return res.json({
+      output: {
+        text: 'Watson Assistant credentials are invalid. Please add/verify them and try again.'
+      }
+    });
+  }
+  else if (!workspaceID) {
     return res.json({
       output: {
         text: 'Assistant initialization in progress. Please try again.'
