@@ -20,7 +20,7 @@ CMD [ "npm","start"]
 # requirement for building a certifiable image.
 LABEL name="dev-rh/watson-assistant-slots-intro" \
   vendor="IBM" \
-  version="0.0.9" \
+  version="0.0.8" \
   release="" \
   summary="Pizza chatbot" \
   description="This chatbot allows users to order pizza."
