@@ -1,0 +1,47 @@
+# Default values for template-node-typescript.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+global: {}
+
+replicaCount: 1
+logLevel: "debug"
+
+image:
+  repository: replace
+  tag: replace
+  pullPolicy: IfNotPresent
+  port: 3000
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 80
+
+route:
+  enabled: false
+
+ingress:
+  enabled: true
+  appid:
+    enabled: false
+    # web or app - https://cloud.ibm.com/docs/services/appid?topic=appid-kube-auth
+    requestType: web
+
+#  host: hello
+  namespaceInHost: true
+  subdomain: containers.appdomain.cloud
+  path: "/"
+
+#  tlsSecretName: ""
+
+vcsInfo:
+  repoUrl: ""
+  branch: ""
+
+partOf: ""
+
+connectsTo: ""
+
+runtime: ""
