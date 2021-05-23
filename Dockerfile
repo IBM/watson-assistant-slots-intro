@@ -1,6 +1,6 @@
 # Use nodejs image on Alpine as our base builder image - it has all the packages we need
 # FROM node:current AS builder
-FROM node:14.0.0 AS builder
+FROM node:14.0.0-alpine3.10 AS builder
 
 WORKDIR /app
 ADD . /app
@@ -21,7 +21,7 @@ CMD [ "npm","start"]
 # requirement for building a certifiable image.
 LABEL name="dev-rh/watson-assistant-slots-intro" \
   vendor="IBM" \
-  version="0.0.8" \
+  version="0.0.7" \
   release="" \
   summary="Pizza chatbot" \
   description="This chatbot allows users to order pizza."
