@@ -1,6 +1,6 @@
 # Use nodejs image on Alpine as our base builder image - it has all the packages we need
 # FROM node:current AS builder
-FROM node:14.17.0-alpine3.11 AS builder
+FROM node:14.0.0 AS builder
 
 WORKDIR /app
 ADD . /app
