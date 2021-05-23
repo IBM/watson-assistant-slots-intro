@@ -114,6 +114,12 @@ app.post('/api/message', function(req, res) {
   });
 });
 
+// add health endpoint
+app.get('/health', (req, res) => {
+  console.log('Health Check called');
+  res.send('UP');
+});
+
 /**
  * Updates the response text using the intent confidence
  * @param  {Object} input The request to the Assistant service
