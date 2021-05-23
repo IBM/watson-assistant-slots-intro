@@ -1,26 +1,14 @@
-# Use nodejs image on Alpine as our base builder image - it has all the packages we need
-FROM node:14.0.0-alpine3.10 AS builder
+FROM node
 
-WORKDIR /app
-ADD . /app
+RUN apt-get update && apt-get install -y jq
 
-# Install dependencies
-RUN npm install
-
-# Build our deployable image based on UBI
-FROM registry.access.redhat.com/ubi8/nodejs-14:1-31 
-COPY --from=builder /app .
-
-# Start app
 EXPOSE 3000
 
-CMD [ "npm","start"]
+WORKDIR /app
 
-# Add label information that will be associated with our image. This is another
-# requirement for building a certifiable image.
-LABEL name="dev-rh/watson-assistant-slots-intro" \
-  vendor="IBM" \
-  version="0.0.9" \
-  release="" \
-  summary="Pizza chatbot" \
-  description="This chatbot allows users to order pizza."
+ADD . /app
+RUN chmod +x /app/run-server.sh
+
+RUN npm install
+
+CMD [ "/app/run-server.sh"]
