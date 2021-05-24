@@ -2,6 +2,7 @@
 # FROM node:current AS builder
 FROM node:14.0.0-alpine3.10 AS builder
 
+
 WORKDIR /app
 ADD . /app
 
