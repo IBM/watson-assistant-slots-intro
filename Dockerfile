@@ -1,6 +1,7 @@
 # Use nodejs image on Alpine as our base builder image - it has all the packages we need
 # FROM node:current AS builder
-FROM node:14.0.0-alpine3.10 AS builder
+# FROM node:14.0.0-alpine3.10 AS builder
+FROM registry.access.redhat.com/ubi8/nodejs-14:1-28.1618434924 AS builder
 
 
 WORKDIR /app
