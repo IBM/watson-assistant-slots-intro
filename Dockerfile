@@ -7,7 +7,7 @@ FROM registry.access.redhat.com/ubi8/nodejs-14 AS builder
 WORKDIR /app
 ADD . /app
 
-# Install dependencies
+# Install dependenciess
 RUN npm install
 
 # Build our deployable image based on UBI
