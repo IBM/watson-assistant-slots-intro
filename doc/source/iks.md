@@ -144,7 +144,7 @@ Now that you have created and bound a service instance to your cluster, let's ta
 
 ```json
 {
- "url":"https://gateway.watsonplatform.net/assistant/api",
+ "url":"service-instance-url",
  "username":"service-instance-user-uuid",
  "password":"service-instance-password"
 }
