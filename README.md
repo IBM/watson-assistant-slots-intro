@@ -24,6 +24,8 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 ## Included Components
 
+> NOTE: This Code Pattern uses Watson Assistant V2. For a newly provisioned instance (after 10/8/2021), you can switch versions by going to the top-right corner of the Assistant screen and clicking the *Manage* icon <img title="a title" alt="Alt text" src="https://github.com/IBM/pattern-utils/blob/master/watson-assistant/person-icon.png" width="35" height="35">. Click on *Switch to classic experience* to use Assistant V1, and click on *Switch to new experience* to use Assistant V2.
+
 * [IBM Watson Assistant](https://www.ibm.com/cloud/watson-assistant/): Build, test and deploy a bot or virtual agent across mobile devices, messaging platforms, or even on a physical robot.
 
 ## Featured technologies
