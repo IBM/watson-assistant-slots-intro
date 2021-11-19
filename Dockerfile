@@ -11,7 +11,7 @@ ADD . /app
 RUN npm install
 
 # Build our deployable image based on UBI
-FROM registry.access.redhat.com/ubi8/nodejs-14:1-28 
+FROM registry.access.redhat.com/ubi8/nodejs-14:1-51 
 COPY --from=builder /app .
 
 # Start app

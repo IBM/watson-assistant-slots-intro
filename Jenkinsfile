@@ -212,7 +212,7 @@ spec:
             stage('Sonar scan') {
                 sh '''#!/bin/bash
 
-               if ! command -v sonar-scanner &> /dev/null
+                if ! command -v sonar-scanner &> /dev/null
                 then
                     echo "Skipping SonarQube step, no task defined"
                     exit 0
@@ -226,7 +226,7 @@ spec:
                 else 
                     echo "Skipping Sonar Qube step"
                 fi
-                ''' 
+                '''
             }
         }
         container(name: 'node', shell: '/bin/bash') {
