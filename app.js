@@ -50,7 +50,7 @@ try {
   auth = getAuthenticatorFromEnvironment('CONVERSATION');
 
   conversation = new AssistantV1({
-    version: '2021-04-15',
+    version: '2022-01-10',
     authenticator: auth
   });
 
@@ -83,7 +83,7 @@ try {
 }
 
 // Endpoint to be call from the client side
-app.post('/api/message', function(req, res) {
+app.post('/api/message', async (req, res) => {
 
   if (initError) {
     return res.json({
@@ -106,12 +106,11 @@ app.post('/api/message', function(req, res) {
     input: req.body.input || {}
   };
   // Send the input to the conversation service
-  conversation.message(payload, function(err, data) {
-    if (err) {
-      return res.status(err.code || 500).json(err);
-    }
-    return res.json(updateMessage(payload, data));
-  });
+  let result = await conversation.message(payload);
+  if (result.status != 200) {
+      return res.status(result.status || 500).json(result.statusText);
+  }
+  return res.json(updateMessage(payload, result));
 });
 
 /**

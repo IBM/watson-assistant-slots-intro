@@ -14,4 +14,4 @@ applications:
   env:
     NPM_CONFIG_PRODUCTION: false
   buildpacks:
-    - sdk-for-nodejs
+    - nodejs_buildpack
