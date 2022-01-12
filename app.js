@@ -83,7 +83,7 @@ try {
 }
 
 // Endpoint to be call from the client side
-app.post('/api/message', async function(req, res) {
+app.post('/api/message', async (req, res) => {
 
   if (initError) {
     return res.json({
