@@ -19,15 +19,21 @@ var path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '../../.env.example') });
 
 var app = require('../../app');
+app.server = app.listen(3000);
+
 var request = require('supertest');
 
 describe('express', function() {
-  it('load home page when GET /', function() {
-    request(app).get('/').expect(200);
+  after(() => {
+    app.server.close();
   });
 
-  it('404 when page not found', function() {
-    request(app).get('/foo/bar').expect(404);
+  it('load home page when GET /', async function() {
+    await request(app).get('/').expect(200);
+  });
+
+  it('404 when page not found', async function() {
+    await request(app).get('/foo/bar').expect(404);
   });
 
 });

@@ -34,7 +34,7 @@ function run() {
         }
 
         function runTests() {
-            var casper = spawn('npm', ['run', 'test-integration']);
+            var casper = spawn('npx', ['casperjs', 'test', `${process.env.INIT_CWD}/test/integration/test.mainpage.js`]);
             casper.stdout.pipe(process.stdout);
 
             casper.on('error', function(error) {
